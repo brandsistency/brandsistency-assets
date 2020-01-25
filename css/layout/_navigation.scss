@@ -43,7 +43,7 @@ nav {
 					transition: transform 0.2s;
 				}
 
-				// Horizonatal flip of arrow when submenu open
+				// Horizonatal axis flip of arrow when submenu open
 				&:not(:only-child).open::after {
 					transform: rotateX(180deg);
 				}
@@ -61,7 +61,7 @@ nav {
 				background-color: $white;
 				border-radius: 0 0 4px 4px;
 				border-top: 2px solid $white;
-				box-shadow: 0 4px 5px rgba(34,34,34,0.1);
+				box-shadow: 0 4px 4px rgba(34,34,34,0.1);
 				display: none;
 				left: -5px;
 				padding: 0 10px 10px 5px;
@@ -95,6 +95,38 @@ nav {
 	.button {
 		margin: 20px;
   	width: calc(100% - 40px);
+	}
+}
+
+.night-mode {
+	nav {
+		ul li {
+			a {
+				color: $white;
+			}
+
+			ul.nav__submenu {
+				background-color: $background-color-night;
+				border-top-color: $background-color-night;			
+				box-shadow: 0 4px 4px rgba(243,243,243,0.1); // RGB equivalent of #f3f3f3 (panel brackground)
+			}
+		}
+
+		.nav__list {
+			> li {
+				border-top-color: $border-color-footer;
+
+				&:last-of-type {
+					border-bottom-color: $border-color-footer;
+				}
+			}
+		}
+
+		#nav__toggle {
+			span {
+				background: $white;
+			}
+		}
 	}
 }
 
@@ -267,7 +299,7 @@ nav {
 @media (min-width: 768px) and (min-height: 600px) {
   nav {
 		.nav__list {
-			margin: 26px 72px 0 0;
+			margin: 26px 7.2rem 0 0;
 		}
 
 		.nav__submenu {

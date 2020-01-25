@@ -79,6 +79,25 @@
 	}
 }
 
+.night-mode {
+	.header {
+		background-color: $background-color-night;
+		
+		&:focus-within,
+		&:hover,
+		&.has-focus,
+		&.scrolled {
+			box-shadow: 0 -10px 15px $background-color-panel;
+		}		
+
+		.logo {
+			path {
+				fill: $white;
+			}
+		}
+	}
+}
+
 
 
 /*------------------------------------------------------------

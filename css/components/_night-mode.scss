@@ -35,58 +35,6 @@
 		}
 	}
 
-	// HEADER BAR
-	.header {
-		background-color: $background-color-night;
-		
-		&:focus-within,
-		&:hover,
-		&.has-focus,
-		&.scrolled {
-			box-shadow: 0 -10px 15px $white;
-		}		
-	}
-
-	// LOGO
-	.logo {
-		path {
-			fill: $white;
-		}
-	}
-
-	// NAVIGATION
-	nav {
-		ul li {
-			a {
-				color: $white;
-			}
-
-			ul.nav__submenu {
-				background-color: $background-color-night;
-				border-top-color: $background-color-night;			
-				box-shadow: 0 4px 5px rgba(255,255,255,0.1);
-			}
-		}
-
-		.nav__list {
-			> li {
-				border-top-color: $border-color-footer;
-
-				&:last-of-type {
-					border-bottom-color: $border-color-footer;
-				}
-			}
-		}
-
-		#nav__toggle {
-			span {
-				background: $white;
-			}
-		}
-	}
-
-
-
 	// BANNER SECTION
 	.banner {
 		background-color: $background-color-night;
