@@ -35,31 +35,8 @@
 		}
 	}
 
-	// BANNER SECTION
-	.banner {
-		background-color: $background-color-night;
-	}
-
 	// CONTENT SECTION
 	.content {
-		background-color: $background-color-night;
-
-		a {
-			&:not(.button) {
-				&:link,
-				&:visited {
-					span:not(.tooltip),
-					span:not(.tooltip) {
-						border-bottom: 5px solid $background-color-night;
-					}
-				}
-			}
-
-			&.info {
-				border-bottom-color: $color-footer;
-				color: $white;
-			}
-		}
 
 		// Divider lines
 		hr {

@@ -59,8 +59,34 @@ main {
   padding-bottom: 0.2rem;
 }
 
+.night-mode {
+	.content {
+		background-color: $background-color-night;
+
+		a {
+			&:not(.button) {
+				&:link,
+				&:visited {
+					span:not(.tooltip),
+					span:not(.tooltip) {
+						border-bottom: 5px solid $background-color-night;
+					}
+				}
+			}
+
+			&.info {
+				border-bottom-color: $color-footer;
+				color: $white;
+			}
+		}
+	}
+}
 
 
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
 
 @media (min-width: 600px) and (min-height: 600px) {
 	.content {
