@@ -215,15 +215,15 @@ strong,
 ------------------------------------------------------------*/
 
 @font-face {
-	font-family: 'Simple-Line-Icons';
+	font-family: 'Simple-Line-Icons'; // All font variants v=2.2.2
 	font-style: normal;
 	font-weight: normal;
-	src: url("../fonts/Simple-Line-Icons.eot?v=2.2.2");
-	src: url("../fonts/Simple-Line-Icons.eot?v=2.2.2#iefix") format("embedded-opentype"),
-			 url("../fonts/Simple-Line-Icons.ttf?v=2.2.2") format("truetype"),
-			 url("../fonts/Simple-Line-Icons.woff2?v=2.2.2") format("woff2"),
-			 url("../fonts/Simple-Line-Icons.woff?v=2.2.2") format("woff"),
-			 url("../fonts/Simple-Line-Icons.svg?v=2.2.2#simple-line-icons") format("svg");
+	src: url("../fonts/Simple-Line-Icons.eot");
+	src: url("../fonts/Simple-Line-Icons.eot#iefix") format("embedded-opentype"),
+			 url("../fonts/Simple-Line-Icons.ttf") format("truetype"),
+			 url("../fonts/Simple-Line-Icons.woff2") format("woff2"),
+			 url("../fonts/Simple-Line-Icons.woff") format("woff"),
+			 url("../fonts/Simple-Line-Icons.svg#simple-line-icons") format("svg");
 	font-display: block;
 }
 
@@ -244,7 +244,7 @@ strong,
 	&new-window::before      { content: "\e05a"; }
 	&arrow-down:before       { content: "\e604"; }
 	&arrow-left:before       { content: "\e605"; }
-	&arrow-right:before      { content: "\e606"; font-weight: 700; }
+	&arrow-right:before      { content: "\e606"; font-weight: 700; } // Bold weight for homepage links to services
 	&arrow-up:before         { content: "\e607"; }
 	&calendar:before         { content: "\e075"; }
 	&clock:before            { content: "\e081"; }
