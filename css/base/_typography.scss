@@ -1,0 +1,260 @@
+/*------------------------------------------------------------
+	DEFAULT AND MOBILE STYLES
+------------------------------------------------------------*/
+
+html {
+	font-size: 62.5% !important; // Equates 1rem to 10px
+}
+
+body {
+	color: $color-body;
+	font-family: $font-family-sans;
+	font-size: $font-size-body-small;
+	font-weight: $font-weight-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+label {
+	line-height: 1.6;
+	margin-bottom: $font-size-body-small;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: calc(#{$font-size-body-small} * 2.25);
+	line-height: 1.3;
+}
+
+h2 {
+	font-size: calc(#{$font-size-body-small} * 1.5);
+	line-height: 1.4;
+
+	&:only-child {
+		margin-bottom: calc(#{$font-size-body-small} * 1.5);
+	}
+
+	&:not(:first-child) {
+		margin-top: $font-size-body-small;
+	}
+}
+
+table + h2:not(:first-child) {
+	margin-top: calc(#{$font-size-body-small} * 2);
+}
+
+h3 {
+	font-size: calc(#{$font-size-body-small} * 1.1);
+	margin-bottom: calc(#{$font-size-body-small} * 0.1);
+}
+
+h4,
+p.subhead {
+	//color: $color-body;
+	font-size: calc(#{$font-size-body-small} * 1.25);
+	font-weight: $font-weight-body;
+	line-height: 1.5;
+}
+
+.content h4 {
+	font-size: calc(#{$font-size-body-small} * 1.25);
+	margin-bottom: calc(#{$font-size-body-small} * 1.25);
+}
+
+h1,
+h2,
+h3 {
+	color: $color-head;
+	font-family: $font-family-serif;
+	font-weight: $font-weight-head;
+}
+
+.small,
+.quip-fld p,
+img {
+	color: $color-small;
+	font-size: $font-size-small;
+	font-weight: $font-weight-small;
+	text-decoration: none;
+}
+
+.small.dark,
+.quip-fld p.dark,
+img {
+	color: $color-body;
+}
+
+blockquote {
+	text-align: center;
+
+	p {
+		color: $orange;
+		font-family: $font-family-script;
+		font-size: calc(#{$font-size-body-small} * 2.25); // Same as h1
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1.15;
+		margin-top: 4px;
+		padding: 0 10px;
+	}
+
+	cite {
+		color: $color-small;
+		display: block;
+		font-size: $font-size-small;
+		font-style: normal;
+		font-weight: $font-weight-small;
+		margin-bottom: 0.5rem;
+		margin-top: $font-size-body-small;
+	}
+}
+
+.article {
+	blockquote {
+		cite {
+			margin-bottom: $font-size-body-small;
+		}
+	}
+}
+
+strong,
+.emphasis {
+	color: $color-strong;
+	font-weight: $font-weight-strong;
+}
+
+
+
+/*------------------------------------------------------------
+	DESKTOP STYLES
+------------------------------------------------------------*/
+
+@media (max-width: 599px) {
+	blockquote {
+		padding: 0;
+	}
+}
+
+@media (min-width: 600px) and (min-height: 600px) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p,
+	ul,
+	label {
+		font-size: $font-size-body-large;
+		margin-bottom: $font-size-body-large;
+	}
+
+	h1 {
+		font-size: calc(#{$font-size-body-large} * 3);
+	}
+	
+	h2 {
+		font-size: calc(#{$font-size-body-large} * 1.5);
+
+		&:only-child {
+			margin-bottom: calc(#{$font-size-body-large} * 1.5);
+		}
+	
+		&:not(:first-child) {
+			margin-top: $font-size-body-large;
+		}
+	}
+
+	table + h2:not(:first-child) {
+		margin-top: calc(#{$font-size-body-large} * 2);
+	}
+
+	h3 {
+		font-size: calc(#{$font-size-body-large} * 1.1);
+		margin-bottom: calc(#{$font-size-body-large} * 0.1);
+	}
+
+	h4,
+	p.subhead {
+		font-size: calc(#{$font-size-body-large} * 1.5);
+	}
+
+	.content h4 {
+		font-size: calc(#{$font-size-body-large} * 1.25);
+		margin-bottom: calc(#{$font-size-body-large} * 1.25);
+	}
+
+	blockquote {
+		p {
+			font-size: calc(#{$font-size-body-large} * 3); // Same as h1
+		}
+
+		cite {
+			margin-top: $font-size-body-large;
+		}
+	}
+
+	.article {
+		blockquote {
+			cite {
+				margin-bottom: 2.2rem;
+			}
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------
+	@FONT-FACE
+------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'Simple-Line-Icons';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/Simple-Line-Icons.eot?v=2.2.2");
+	src: url("../fonts/Simple-Line-Icons.eot?v=2.2.2#iefix") format("embedded-opentype"),
+			 url("../fonts/Simple-Line-Icons.ttf?v=2.2.2") format("truetype"),
+			 url("../fonts/Simple-Line-Icons.woff2?v=2.2.2") format("woff2"),
+			 url("../fonts/Simple-Line-Icons.woff?v=2.2.2") format("woff"),
+			 url("../fonts/Simple-Line-Icons.svg?v=2.2.2#simple-line-icons") format("svg");
+	font-display: block;
+}
+
+[class^="icon-"] {
+	font-family: "Simple-Line-Icons" !important;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+
+	&::before {
+		position: relative;
+	}
+}
+
+.icon- {
+	&new-window::before      { content: "\e05a"; }
+	&arrow-down:before       { content: "\e604"; }
+	&arrow-left:before       { content: "\e605"; }
+	&arrow-right:before      { content: "\e606"; font-weight: 700; }
+	&arrow-up:before         { content: "\e607"; }
+	&calendar:before         { content: "\e075"; }
+	&clock:before            { content: "\e081"; }
+	&envelope:before         { content: "\e086"; }
+	&phone:before            { content: "\e600"; }
+	&printer:before          { content: "\e02e"; }
+	&social-facebook:before  { content: "\e00b"; }
+	&social-instagram:before { content: "\e609"; }
+	&social-linkedin:before  { content: "\e60a"; }
+	&social-twitter:before   { content: "\e009"; }
+	&tag:before              { content: "\e055"; }
+	&user:before             { content: "\e005"; }
+}

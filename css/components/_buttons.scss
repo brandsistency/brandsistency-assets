@@ -1,0 +1,94 @@
+.button {
+	@include button;
+	width: 100%;
+
+	&:focus,
+	&:hover,
+	&:active {
+		@include button-hover;
+	}
+}
+
+.content {
+	.button {
+		margin-bottom: 1rem;
+
+		&:not([type=submit]) {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.tertiary {
+	.button {
+		margin: 1rem auto;
+	}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 899px) {
+	.button {
+		width: calc(50% - 10px);
+
+		&:nth-child(2) {
+			margin-left: 20px;
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+	.col-sm-8 {
+		.button {
+			width: 75%;
+		}
+	}
+
+	.col-sm-10 {
+		.button {
+			width: calc((50% * 1.2) - 6px);
+		}
+	}
+}
+
+@media only screen and (max-width: 899px) {
+	.button {
+		&:nth-child(2) {
+			margin-top: 20px;
+		}
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	.button {
+		max-width: 260px;
+		width: calc(25% - 20px);
+	}
+
+	.col-md-6 {
+		.button {
+			width: calc(50% - 10px);
+
+			&:nth-child(2) {
+				margin-left: 20px;
+			}
+		}
+	}
+
+	.col-md-8 {
+		.button {
+			width: calc((50% / 1.33333333) - 15px);
+		}
+	}
+}
+
+@media only screen and (max-width: 599px) {
+	.content {
+		a:not(.button) {
+			&:link,
+			&:visited {
+				span {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}

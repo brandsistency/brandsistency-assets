@@ -1,0 +1,121 @@
+/*------------------------------------------------------------
+	BACKGROUNDS AND BORDERS
+------------------------------------------------------------*/
+
+@mixin border {
+	border: 1px solid $border-color;
+}
+	
+@mixin border-bottom {
+	border-bottom: $border-width $border-style $border-color;
+}
+	
+@mixin border-top {
+	border-top: 1px solid $border-color;
+}
+
+
+
+/*------------------------------------------------------------
+	BUTTONS
+------------------------------------------------------------*/
+
+@mixin button {
+	background: transparent;
+	border: 2px solid $orange;
+	border-radius: 5px;
+	color: $orange;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family-serif;
+	font-size: $font-size-small;
+	font-weight: $font-weight-button;
+	height: 4.9rem;
+	line-height: 4.5rem;
+	padding: 0 2rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.2s;
+	white-space: nowrap;
+}
+
+@mixin button-hover {
+	background-color: $orange;
+	color: $white;
+	outline: none;
+}
+
+
+
+/*------------------------------------------------------------
+	LINKS
+------------------------------------------------------------*/
+
+@mixin link {
+	border-bottom: 1px dotted $orange;
+	color: $orange;
+	cursor: pointer;
+	font-weight: $font-weight-strong;
+	padding-bottom: 1px;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+@mixin link-hover {
+	border-bottom: 1px solid $orange;
+	color: $orange;
+	outline: none;
+}
+
+
+
+/*
+@mixin sprite {
+  background-image: url(../img/sprite.png);
+  background-image: url(../img/sprite.svg),none;
+  background-repeat: no-repeat;
+  background-size: 460px 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  height: 50px;
+  width: 50px;
+}
+
+@mixin sprite-span {
+  background-image: url(../img/sprite.png);
+  background-image: url(../img/sprite.svg), none;
+  background-repeat: no-repeat;
+  background-size: 460px 50px;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.2s;
+}
+*/
+
+@mixin sprite {
+  background-image: url(../img/sprite.png);
+  background-image: url(../img/sprite.svg), none;
+  background-repeat: no-repeat;
+  background-size: 460px 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  position: absolute;
+}
+
+@mixin sprite-span {
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.2s;
+}

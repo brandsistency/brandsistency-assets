@@ -1,0 +1,249 @@
+/*------------------------------------------------------------
+	DEFAULT STYLES
+------------------------------------------------------------*/
+
+.banner {
+	padding-top: 70px;
+	width: 100%;
+}
+
+.banner__header {
+	margin: 65px 0 5px;
+}
+
+.header__bar {
+	border-top: 3px solid $orange;
+	margin: 2.5rem 0 3.2rem;
+	margin: calc(#{$font-size-body-small} * 1.5) 0;
+	width: 12rem;
+}
+
+.hero {
+	background-color: $background-color-panel;
+	height: calc(100vh - 70px);
+	min-height: 300px;
+	position: relative;
+	width: 100%;
+}
+
+.hero__image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+#hero__video {
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: none;
+	height: 100%;
+	object-fit: cover;
+	object-position: left;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+// Hero background-position (tied to Fred element options)
+.hero--left-top { background-position: left top; }
+.hero--left-center { background-position: left center; }
+.hero--left-bottom { background-position: left bottom; }
+.hero--right-top { background-position: right top; }
+.hero--right-center { background-position: right center; }
+.hero--right-bottom { background-position: right bottom; }
+.hero--center-top { background-position: center top; }
+.hero--center-center { background-position: center center; }
+.hero--center-bottom { background-position: center bottom; }
+
+.hero__header {
+	animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
+						 moveHeroHeader 1.5s ease-in-out 0.25s normal forwards;
+	opacity: 0;
+	position: relative;
+	top: 46%;
+
+	h1,
+	p {
+		color: $white;
+		text-shadow: 0 0 7px $color-body;
+	}
+}
+
+.hero__overlay {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.hero__scroll {
+	animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
+						 moveScrollDown 1.5s ease-in-out 0.25s normal forwards,
+						 bounceDown 1s ease-in-out 2.5s infinite alternate;
+	bottom: 80px;
+	margin-left: auto;
+  margin-right: auto;
+  max-width: 1220px;
+	opacity: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+	position: relative;
+	width: 100%;
+
+	a {
+		color: $white;
+		margin-left: -5px;
+		padding: 25px 8px 6px;
+		text-decoration: none;
+		text-shadow: 0 0 7px $color-head;
+		transition: 0.2s;
+
+		[class^="icon-"] {
+			font-size: 34px;
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+// Small artlcie header on blog posts
+.article__header {
+	left: 50%;
+	margin-left: auto;
+  margin-right: auto;
+	max-width: 1220px;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: absolute;
+	top: 50px;
+	transform: translateX(-50%);
+	width: 100%;
+
+	p {
+		animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
+							 moveArticleHeader 1.5s ease-in-out 0.25s normal forwards;
+		color: $white;
+		font: $font-weight-button $font-size-small $font-family-serif;
+		opacity: 0;
+		text-shadow: 0 0 7px $color-body;
+		text-transform: uppercase;
+	}
+}
+
+// CHECK IF REQUIRED
+.banner .link-label,.footer .link-label {
+  font-size: 1.4rem;
+  left: -9999px;
+  position: absolute;
+}
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+// Desktop and tablet styles
+@media (min-width: 600px) and (min-height: 600px) {
+	.banner {
+		padding-top: 90px;
+	}
+
+	.banner__header {
+		margin: 100px 0 10px;
+	}
+	 
+	.header__bar {
+		margin: calc(#{$font-size-body-large} * 1.5) 0;
+	}
+	
+	.hero {
+		height: calc(100vh - 90px);
+	}
+
+	#hero__video {
+		display: block;
+	}
+
+	.hero__scroll {
+		a {
+			margin-left: 15px;
+		}
+	}
+
+	.article__header {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+// Overrides for smartphones and tablets 
+@media (hover: none) and (pointer: coarse) {
+	// Hide video on touch devives
+	#hero__video {
+		display: none;
+	}
+
+	// Lift scroll arrow to account for device menu bars
+	.hero__scroll {
+		bottom: 150px;
+
+		a:hover {
+			color: $white;
+		}
+	}
+}
+
+// Hide scroll-down arrow and article header on small and landscape smartphones
+@media (max-height: 599px) and (orientation: landscape), (max-width: 359px) {
+	// Hide scroll-down arrow on small and landscape smartphones
+	.hero__scroll {
+		a {
+			opacity: 0;
+		}
+	}
+
+	.article__header {
+		display: none;
+	}
+}
+
+// Repositioning of hero video/images top position when 'fixed' position active
+@supports not (-webkit-overflow-scrolling: touch) {
+	@media (min-width: 900px) {
+		.hero__image {
+			background-attachment: fixed;
+		}
+	
+		#hero__video {
+			position: fixed;
+			top: 90px;
+		}
+	
+		// Hero background-position (tied to Fred element options)
+		.hero--left-top { background-position: left 90px; }
+		.hero--left-center { background-position: left calc(50% + 45px); }
+		.hero--right-top { background-position: right 90px; }
+		.hero--right-center { background-position: right calc(50% + 45px); }
+		.hero--center-top { background-position: center 90px; }
+		.hero--center-center { background-position: center calc(50% + 45px); }
+	}	
+}
+
+// Repositioning of hero video/images top position when 'fixed' position ignored on tablets
+@media
+	(min-device-width: 800px) and (max-device-width: 1280px),
+	(min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5),
+	(min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)
+{
+	// Hero background-position (tied to Fred element options)
+	.hero--left-top { background-position: left top; }
+	.hero--left-center { background-position: left center; }
+	.hero--right-top { background-position: right top; }
+	.hero--right-center { background-position: right center; }
+	.hero--center-top { background-position: center top; }
+	.hero--center-center { background-position: center center; }
+}

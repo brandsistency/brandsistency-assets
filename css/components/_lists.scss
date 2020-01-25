@@ -1,0 +1,93 @@
+
+
+main {
+	ul {
+		line-height: 1.6;
+
+		li {
+			list-style-type: none;
+			margin-left: 1.7rem;
+
+			&:not(:last-child),
+			&.last {
+				margin-bottom: 0;
+			}
+
+			&::before {
+				color: $orange;
+				content: '\2022';
+				font-size: 2.48rem;
+				line-height: 1.5rem;
+				margin-left: -1.7rem;
+				padding-right: 0.8rem;
+				position: relative;
+				top: 0.4rem;
+			}
+		}
+	}
+
+	ol {
+  	counter-reset: li;
+		line-height: 1.6;
+  	list-style: none;
+
+		li {
+			counter-increment: li;
+			margin-left: 1.8rem;
+
+			&::before {
+				color: $orange;
+				content: counter(li) ".";
+				display: inline-block;
+				font-weight: 400;
+				margin-left: -1.9rem;
+				width: 1.9rem;
+			}
+		}
+
+		&.terms {
+			li {
+				margin-bottom: $font-size-body-small;
+			}
+		}
+	}
+
+	.timeline-content {
+		ul {
+  		margin-top: 1.7rem;
+
+			li:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) and (min-height: 600px) {
+  main {
+		ul {
+			li {
+				&::before {
+					font-size: 2.635rem;
+				}
+			}
+		}
+
+		ol {
+			li {
+				margin-left: 2.1rem;
+
+				&::before {
+			    margin-left: -2.2rem;
+					width: 2.2rem;
+				}
+			}
+
+			&.terms {
+				li {
+					margin-bottom: $font-size-body-large;
+				}
+			}
+		}
+  }
+}

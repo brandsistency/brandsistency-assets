@@ -1,0 +1,307 @@
+/*------------------------------------------------------------
+	DEFAULT STYLES
+------------------------------------------------------------*/
+
+.footer {
+	background: #222;
+	flex-shrink: 0;
+	width: 100%;
+	z-index: 80;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li,
+	p {
+		color: $color-footer;
+		font-size: $font-size-small;
+		font-weight: $font-weight-body;
+		line-height: 1.6;
+
+		&:not(.wrap) {
+			white-space: nowrap;
+		}
+
+		&.footer__head {
+			font-family: $font-family-serif;
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+		}
+	
+		a {
+			&:link,
+			&:visited {
+				color: $color-footer;
+				text-decoration: none;
+				transition: 0.2s;
+			}
+
+			&:hover,
+			&:active {
+				color: $white;
+				transition: 0.2s;
+			}
+		}
+	}
+
+	.hidden-xs {
+		li,
+		p {
+			margin-bottom: 1.35rem;
+		}
+	}
+
+	.icon-arrow-down::before {
+		display: none;
+		font-size: 1rem;
+		font-weight: $font-weight-bold;
+		margin-left: 0.5rem;
+	}
+
+	.button {
+		float: left;
+		margin: 20px 0 0;
+		width: calc(50% - 10px);
+
+		&:last-child {
+			float: right;
+		}
+	}
+
+	hr {
+		border-color: $border-color-footer;
+		margin: 0;
+	}	
+}
+
+.footer__menu {
+	padding: 68px 0;
+}
+
+.footer__legal {
+	padding-top: 23px;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.footer__policies {
+	a {
+		margin-left: 2.5rem;
+	}
+}
+
+.footer__social {
+	padding-bottom: 26px;
+	padding-top: 29px;
+	text-align: right;
+
+	a {
+		color: $color-footer !important;
+		font-size: 3rem;
+		padding: 10px;
+		text-decoration: none;
+
+		&:hover {
+			border: none;
+		}
+
+		&.facebook {
+			padding: 10px 8px;
+
+			&:hover {
+				color: $color-facebook !important;
+			}
+		}
+
+		&.twitter {
+			margin-right: 3px;
+
+			&:hover {
+				color: $color-twitter !important;
+			}
+		}
+
+		&.instagram {
+			margin-right: -10px;
+
+			&:hover {
+				color: $color-instagram !important;
+			}
+		}
+
+		&.linkedin {
+			&:hover {
+				color: $color-linkedin !important;
+			}
+		}
+	}
+}
+
+.footer__mobile {
+  width: 100%;
+
+	ul {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			width: 100%;
+
+			a {
+				color: $color-footer;
+				cursor: pointer;
+				display: block;
+				font: $font-weight-bold $font-size-small $font-family-serif;
+				line-height: 35px;
+				margin: 0 -5px 1px;
+				padding: 0 5px;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:hover {
+					color: $color-footer;
+				}
+
+				&:not(:only-child)::after {
+					content: "\e604";
+					display: inline-block;
+					font: 700 1.3rem "Simple-Line-Icons";
+					margin-left: 0.5rem;
+					position: relative;
+					top: 0.1rem;
+					-webkit-transition: 0.2s;
+					transition: 0.2s;
+				}
+
+				&:not(:only-child).open::after {
+					top: 0;
+					-webkit-transform: rotateX(180deg);
+					transform: rotateX(180deg);
+				}
+			}
+
+			ul {
+				&.footer__submenu {
+					display: none;
+
+					li {
+						a {
+							font: $font-weight-body $font-size-small $font-family-sans;
+							line-height: 3.6rem;
+							text-transform: none;
+						}
+
+						&:last-of-type {
+							padding-bottom: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	> ul {
+		> li {
+			border-top: 1px solid $border-color-footer;
+			padding: 1rem 0; //0.8rem 0 0.7rem;
+
+			&:last-of-type {
+				border-bottom: 1px solid $border-color-footer;
+			}
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+// Move social icons to accommodate scroll-to-top link inline on smaller screens
+@media only screen and (max-width: 1345px) {
+	.footer__social {
+		padding-right: 90px;
+	}
+}
+
+// Button width adjustment on small screens
+@media only screen and (max-width: 499px) {
+  .footer {
+		a {
+			&.button {
+    		width: 100%;
+			}
+		}
+	}
+}
+
+// Adjustments for tablet footer
+@media only screen and (max-width: 899px) {
+	.footer__menu {
+		padding-bottom: 75px;
+	}
+
+	.footer__legal {
+		padding-top: 28px;
+	}
+
+	.footer__social {
+		margin-left: -1.5rem;
+		padding-top: 25px;
+		text-align: left;
+
+		&.maintenance {
+			margin-right: 1.5rem;
+		}
+	}
+}
+
+// Adjustments for smartphone footer
+@media only screen and (max-width: 599px) {
+	.footer__menu {
+		padding: 50px 0;
+	}
+
+	.footer__policies {
+		display: block;
+		margin-top: 18px;
+
+		a {
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.icon-arrow-down {
+		&::before {
+			display: inline-block;
+		}
+	}
+}
+
+// Adjustments for full-width footer
+@media only screen and (min-width: 900px) {
+  .footer {
+		li {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.footer__legal {
+		p {
+			margin-top: 1.1rem;
+		}
+	}
+}

@@ -1,0 +1,57 @@
+// Force full-width blocks when editing
+.fred--block {
+	width: 100%;
+}
+
+// Force full-height hero when editing
+.hero {
+	.fred--block,
+	.fred--block_content {
+		height: 100%;
+
+		.hero__image {
+			background-attachment: scroll;
+		}
+
+		#hero__video {
+			position: absolute;
+			top: 0;
+		}
+
+		.hero--left-top { background-position: left top; }
+		.hero--left-center { background-position: left center; }
+		.hero--left-bottom { background-position: left bottom; }
+		.hero--right-top { background-position: right top; }
+		.hero--right-center { background-position: right center; }
+		.hero--right-bottom { background-position: right bottom; }
+		.hero--center-top { background-position: center top; }
+		.hero--center-center { background-position: center center; }
+		.hero--center-bottom { background-position: center bottom; }
+	}
+}
+
+// Prevent pale blue background on buttons when editing
+.mce-content-body *[data-mce-selected="inline-boundary"] {
+	background: transparent;
+}
+
+// Avoid Fred UI font conflicts
+[class^="fred--toolbar"] {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	li,
+	label {
+		font-family: inherit;
+	}
+}
+
+.fred--thumb {
+	strong {
+		color: $white;
+	}
+}

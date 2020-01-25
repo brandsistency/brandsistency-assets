@@ -1,0 +1,158 @@
+/*------------------------------------------------------------
+	STYLES TO OVERRIDE INSITE DEFAULT
+------------------------------------------------------------*/
+
+.cc-revoke,
+.cc-window {
+  background: $background-color-cookies;
+	color: $color-body;
+	display: block;
+	font-family: $font-family-sans;
+	font-size: $font-size-body-small;
+	line-height: 1.6;
+	overflow: hidden;
+	position: fixed;
+	z-index: 97;
+}
+
+.cc-window {
+	box-shadow: 0 10px 15px #222;
+  min-height: 90px;
+  padding: 10px 20px;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  width: 100%;
+
+	&.cc-invisible {
+
+		transform: translateY(100%);
+	}
+
+	&.cc-bottom {
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.cc-message,
+	.cc-compliance {
+		display: block;
+		margin: 0;
+		padding: 5px 0;
+	}
+
+	.cc-message {
+		&::after {
+			content: '.';
+		}
+	}
+
+	.cc-compliance {
+		padding: 10px 0;
+	}
+
+	.cc-btn {
+		color: $orange;
+		display: inline-block;
+
+		&.cc-dismiss {
+			@include button;
+			margin: 0;
+			width: calc(50% - 10px);
+
+			&:focus,
+			&:hover,
+			&:active {
+				@include button-hover;
+			}
+		}
+	}
+
+	.cc-link {
+		@include link;
+		line-height: 1.35;
+		opacity: 1;
+		white-space: nowrap;
+
+		&:hover,
+		&:active {
+			@include link-hover;
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+@media only screen and (max-width: 499px) {
+	.cc-window {
+		.cc-btn {
+			&.cc-dismiss {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) and (min-height: 600px) {
+	.cc-window {
+		padding: 10px 40px;
+
+		.cc-message {
+			font-size: 1.7rem;
+		}
+
+		.cc-compliance {
+    	right: 40px;
+		}
+	}
+}
+
+@media only screen and (min-width: 900px) {
+  .cc-window {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+		.cc-message,
+		.cc-compliance {
+			display: inline-block;
+			margin: 0;
+		}
+
+		.cc-message {
+			max-width: 820px;
+			padding: 5px 20px 5px 0;
+			width: 75%;
+		}
+
+		.cc-compliance {
+			max-width: 1140px;
+			padding: 10px 0;
+			position: absolute;
+			right: 40px;
+			text-align: right;
+			width: calc(100% - 60px);
+			z-index: -1;
+		}
+
+		.cc-btn {
+			&.cc-dismiss {
+				max-width: 260px;
+				width: calc(25% - 30px);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 900px) and (max-height: 599px) {
+  .cc-window {
+		.cc-compliance {
+			right: 20px;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+/*------------------------------------------------------------
+	DEFAULT STYLES
+------------------------------------------------------------*/
+
+.back-to-top {
+	@include sprite;
+	animation: bounceUp 1s ease-in-out 0.5s infinite alternate;
+	background-position: 0 0;
+  bottom: 18px;
+	display: none;
+	height: 50px;
+  position: fixed;
+  right: 10px;
+  width: 50px;
+	z-index: 90;
+	
+	span {
+		@include sprite;
+		@include sprite-span;
+	  background-position: -50px 0;
+	}
+
+	&:hover {
+		span {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+@media only screen and (min-width: 600px) and (min-height: 600px) {
+  .back-to-top {
+    right: 30px;
+  }
+}
+
+// No hover effect on smartphones and tablets
+@media (hover: none) and (pointer: coarse) {
+	.back-to-top {
+    span {
+			background-position: -130px 0;
+		}
+  }
+}

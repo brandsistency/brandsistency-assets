@@ -1,0 +1,82 @@
+/*!-----------------------------------------------------------
+	BRANDSISTENCY.COM STYLESHEET
+--------------------------------------------------------------
+	styles.css | (c) 2017-2019 Brandsistency | hello@brandsistency.com
+	normalize.css v8.0.1 | MIT License | https://github.com/necolas/normalize.css
+	Bootstrap 3 Grid | (c) 2011-2016 Twitter, Inc. | MIT Licence | https://getbootstrap.com/docs/3.3
+	Cookie Consent v3.0.3 | (c) 2015 Silktide Ltd | MIT Licence | https://cookieconsent.insites.com
+	Responsive navigation based on a blog post by Tania Rascia | https://www.taniarascia.com/responsive-dropdown-navigation-bar
+--------------------------------------------------------------
+*/
+
+
+
+/*------------------------------------------------------------
+	PRIMARY PALETTE
+------------------------------------------------------------*/
+
+$orange: #ff6200; // Primary colour
+$blue: #009dff;   // Secondary colour
+$red: #ff001e;    // Failure colour
+$green: #00ac00;  // Success colour
+$white: #fff;
+$silver: #c0c0c0; // Named colour 'Silver'
+$black: #000;
+
+
+
+/*------------------------------------------------------------
+	TYPOGRAPHY
+------------------------------------------------------------*/
+
+$color-body: #111;
+$color-head: #222;
+$color-small: #808080; // Named colour 'Grey'
+$color-footer: #aaa;
+$color-strong: #222;
+
+$font-family-sans: 'Roboto', Arial, Helvetica, sans-serif;
+$font-family-serif: 'Roboto Slab', Tahoma, Geneva, sans-serif;
+$font-family-script: 'Cedarville Cursive', 'Bradley Hand', 'Apple Chancery', cursive;
+
+$font-size-body-small: 1.6rem;
+$font-size-body-large: 1.7rem;
+$font-size-small: 1.4rem;
+
+$font-weight-body: 300;
+$font-weight-small: 300;
+$font-weight-head: 400;
+$font-weight-strong: 500;
+$font-weight-bold: 700;
+$font-weight-button: 700;
+
+
+
+/*------------------------------------------------------------
+	BACKGROUNDS AND BORDERS
+------------------------------------------------------------*/
+
+$background-color-header: #fff;
+$background-color-panel: #f3f3f3;
+$background-color-input: #f3f3f3;
+$background-color-hero: #444;
+$background-color-footer: #222;
+$background-color-night: #161616;
+$background-color-cookies: #ffe0cc; // 20% tint of $orange (#ff6200)
+
+$border-color: #d3d3d3;
+$border-color-panel: #f3f3f3;
+$border-color-footer: #444;
+$border-style: solid;
+$border-width: 1px;
+
+
+
+/*------------------------------------------------------------
+	SOCIAL NETWORK COLOURS
+------------------------------------------------------------*/
+
+$color-facebook: #6d84b4;
+$color-twitter: #55acee;
+$color-instagram: #e1306c;
+$color-linkedin: #00a0dc;

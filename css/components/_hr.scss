@@ -1,0 +1,41 @@
+hr {
+  border: none;
+	border-top: 1px solid $border-color;
+	margin: 15px 0 50px;
+  width: 100%;
+}
+
+.blog {
+	hr {
+		margin-top: 10px;
+	}
+}
+
+.article {
+	hr {
+		margin: 30px 0 40px;
+	}
+}
+
+
+@media (min-width: 600px) and (min-height: 600px) {
+	hr {
+		margin: 65px 0 110px;
+	}
+
+	.blog {
+		hr {
+			margin-top: 60px;
+		}
+	}
+
+  .article {
+		hr {
+    	margin: 35px 0 46px;
+		}
+
+		p:first-child {
+			margin-top: 4px; // increase space between hr and immediately following p text
+		}
+	}
+}

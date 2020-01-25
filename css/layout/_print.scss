@@ -1,0 +1,21 @@
+@media print {
+  .no-print,.no-print * {
+    display: none !important;
+  }
+
+  .header,.footer,.blog-image,.icon-arrows {
+    display: none !important;
+  }
+
+  .banner {
+    min-height: 0;
+  }
+
+  .banner .col-xs-12.headline {
+    padding-top: 0;
+  }
+
+  .banner .hero {
+    padding: 30px 0 0 0;
+  }
+}

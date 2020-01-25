@@ -1,0 +1,375 @@
+/*------------------------------------------------------------
+	DEFAULT STYLES
+------------------------------------------------------------*/
+
+// adasd
+.no-posts {
+  margin: 0 0 60px;
+}
+
+// Blog main page summary cards
+.summary-card,
+.post-summary {
+  background-color: $background-color-panel;
+	border-bottom: 1px solid $border-color;
+	height: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.25s;
+  width: 100%;
+
+	&:hover {
+		border-bottom-color: $orange;
+		transition: 0.25s;
+
+		.summary-headline span {
+			color: $orange;
+			transition: 0.25s;
+		}
+	}
+
+	a {
+		span {
+			border-bottom: none !important;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+}
+
+
+.summary-image {
+	position: relative;
+	width: 100%;
+
+	img {
+		height: 240px;
+		margin: 0;
+		object-fit: cover;
+
+		&[class] {
+			width: 100%;
+		}
+
+		&.left.top { object-position: 0 0;	}
+		&.left.center { object-position: 0 50%; }
+		&.left.bottom { object-position: 0 100%; }
+		&.right.top { object-position: 100% 0; }
+		&.right.center { object-position: 100% 50%; }
+		&.right.bottom { object-position: 100% 100%; }
+		&.center.top { object-position: 50% 0; }
+		&.center.center { object-position: 50% 50%; }
+		&.center.bottom { object-position: 50% 100%; }
+	}
+}
+
+.summary-content {
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 240px);
+	padding: 20px 20px;
+	position: relative;
+	width: 100%;
+}
+
+.summary-headline {
+	flex-grow: 1;
+	transition: 0.25s;
+}
+
+.summary-meta,
+.article-meta {
+	[class^="icon-"]::before {
+		font-size: 1.3rem;
+		margin-right: 0.6rem;
+		position: relative;
+	}
+}
+
+.summary-meta {
+	margin-bottom: 0;
+}
+
+.article-meta {
+	margin-bottom: -1rem;
+}
+
+
+.icon-bubble::before {
+  font-size: 1.4rem;
+}
+
+
+
+.share {
+  margin-left: -15px;
+  margin-top: 10px;
+  padding-bottom: 2rem;
+
+	a {
+		border: none !important;
+		font-size: 3rem;
+		margin-right: 0.5rem;
+		padding: 10px;
+		text-decoration: none;
+
+		&:first-child {
+			margin-right: 0;
+		}
+
+		&:hover {
+			border: none;
+		}
+
+		&.facebook {
+			padding: 10px 8px;
+
+			&:hover {
+				color: #6d84b4 !important;
+			}
+		}
+	
+		&.twitter {
+			&:hover {
+				color: #55acee !important;
+			}
+		}
+	
+		&.instagram {
+			&:hover {
+				color: #e1306c !important;
+			}
+		}
+	
+		&.linkedin {
+			&:hover {
+				color: #00a0dc !important;
+			}
+		}
+	
+		&.email,
+		&.print {
+			&:hover {
+				color: $orange !important;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+@media (min-height: 600px) and (min-width: 600px) {
+  .no-posts {
+    margin: -35px 0 110px;
+  }
+}
+
+
+@media (min-width: 600px) {
+	.summary-card,
+	.post-summary  {
+		margin-bottom: 60px;
+
+		.summary-content {
+			padding: 20px 30px;
+		}
+	}
+
+  .post {
+    display: flex;
+  }
+
+	.article-meta {
+		margin-bottom: -20px;
+	}
+
+  .share {
+		margin-left: -10px;
+		margin-top: -2px;
+		padding-bottom: 0;
+		position: -webkit-sticky;
+		position: sticky;
+ 		top: 197px;
+		width: 50px;
+  }
+
+  .share a {
+    margin-right: 0;
+  }
+}
+
+
+// PROGRESS BAR
+
+progress {
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	color: $orange;
+	height: 2px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: $orange;
+}
+
+progress::-moz-progress-bar {
+  background-color: $orange;
+}
+
+.progress-container {
+  background-color: transparent;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: $orange;
+  display: block;
+  height: inherit;
+  width: 50%;
+}
+
+
+
+
+
+
+
+.post-summary .icon-arrow-right::before {
+  bottom: 0.05rem;
+  color: $orange;
+  margin-right: 0;
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+#post {
+  position: relative;
+  top: -27px;
+}
+
+
+
+
+@media (min-width: 600px) {
+  #post {
+    top: -9px;
+  }
+  .content .share a {
+    display: block;
+    padding: 8px 10px !important;
+  }
+}
+
+
+
+.content {
+	.share {
+		a {
+			color: $silver !important;
+			font-size: 3rem;
+			padding: 10px;
+			text-decoration: none;
+
+			&:hover {
+				border: none;
+			}
+			
+			&.facebook {
+				padding: 10px 8px;
+
+				&:hover {
+					color: $color-facebook !important;
+				}
+			}
+
+			&.twitter {
+				margin-right: 3px;
+
+				&:hover {
+					color: $color-twitter !important;
+				}
+			}
+
+			&.linkedin {
+				&:hover {
+					color: $color-linkedin !important;
+				}
+			}
+
+			&.email,
+			&.print {
+				&:hover {
+					color: $orange !important;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+  .content {
+		.share {
+			a {
+	   		display: block;
+				padding: 8px 10px;
+
+				&.facebook {
+					padding: 8px 10px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+#post {
+  position: relative;
+  top: -27px;
+}
+
+@media only screen and (min-width: 600px) {
+  #post {
+    top: -9px;
+  }
+}

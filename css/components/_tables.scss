@@ -1,0 +1,82 @@
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.optin {
+  margin-left: -2px;
+}
+
+.optin td:first-child {
+  width: 32px;
+}
+
+.footnote td:first-child {
+  width: 11px;
+}
+
+th:first-child,
+td:first-child {
+  width: 22px;
+}
+
+.ul td:first-child {
+  font-size: 1.7rem;
+  overflow: hidden;
+  width: 18px;
+}
+
+.ul tr:not(:last-child) p {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+table.cookie th,
+table.cookie td,
+table.profile th,
+table.profile td {
+  border-bottom: 1px solid #d5d5d5;
+  min-width: 85px;
+  padding: 10px 10px 10px 0;
+  width: 10%;
+}
+
+table.cookie th:first-child,
+table.cookie td:first-child,
+table.profile th:first-child,
+table.profile td:first-child {
+  width: 14%;
+}
+
+table.cookie th:last-child,
+table.cookie td:last-child,
+table.profile th:last-child,
+table.profile td:last-child {
+  min-width: 100px;
+  padding-right: 0;
+  width: 73%;
+}
+
+table.cookie th p,
+table.cookie td p,
+table.profile th p,
+table.profile td p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+table.cookie th,table.profile th {
+  border-top: 1px solid #d5d5d5;
+}
+
+table.cookie th p,table.profile th p {
+  color: #333;
+  font-weight: 500;
+}

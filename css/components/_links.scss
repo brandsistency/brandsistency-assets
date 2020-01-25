@@ -1,0 +1,105 @@
+
+.content {
+	a {
+		&:not(.button) {
+			&:link,
+			&:visited {
+				@include link;
+
+				// For any Simple Line Icons built into links 
+				span:not(.tooltip),
+				span:not(.tooltip) {
+					border-bottom: 5px solid $white;
+					font-size: $font-size-small;
+					font-weight: $font-weight-head;
+					padding: 0 0 0.2rem 0.5rem;
+				}
+			}
+
+			&:hover,
+			&:active {
+				@include link-hover;
+			}
+		}
+
+		&.icon-arrows,
+		&.icon-social {
+			&:hover,
+			&:active {
+  			border-bottom: none;
+			}
+		}
+
+		&.info {
+			border-bottom: 1px dotted $border-color-footer;
+			color: $color-body;
+			cursor: help;
+			display: inline;
+			padding-bottom: 1px;
+
+			&:hover,
+			&:active {
+				border-bottom: 1px solid $orange;
+				color: $orange;
+			}
+		}
+	}
+
+	.small a {
+		:not(.button) {
+			font-weight: $font-weight-small;
+		}
+
+		/*&.info {
+			border-bottom: 1px dotted $color-body;
+			color: $color-body;
+			font-weight: $font-weight-body;
+			padding-bottom: 1px;
+
+			&:hover,
+			&:active {
+				border-bottom: 1px solid $orange;
+				color: $orange;
+			}
+		}*/
+	}
+}
+
+
+.anchor {
+  height: 1px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -69px;
+  width: 1px;
+}
+
+.anchor#comments {
+  position: relative;
+  top: -133px;
+}
+
+
+
+/*------------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+------------------------------------------------------------*/
+
+// Overrides for smartphones and tablets 
+@media (hover: none) and (pointer: coarse) {
+	// Prevent word selection on click
+	.content {
+		a {
+			&.info {
+				user-select: none;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) and (min-height: 600px) {
+	.anchor {
+    top: -89px;
+  }
+}
