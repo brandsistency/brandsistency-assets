@@ -11,11 +11,7 @@
 
 .content {
 	.button {
-		margin-bottom: 1rem;
-
-		&:not([type=submit]) {
-			margin-top: 1rem;
-		}
+		margin: 1rem 0;
 	}
 }
 

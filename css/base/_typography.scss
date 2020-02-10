@@ -78,16 +78,9 @@ h3 {
 .small,
 .quip-fld p,
 img {
-	color: $color-small;
 	font-size: $font-size-small;
 	font-weight: $font-weight-small;
 	text-decoration: none;
-}
-
-.small.dark,
-.quip-fld p.dark,
-img {
-	color: $color-body;
 }
 
 blockquote {

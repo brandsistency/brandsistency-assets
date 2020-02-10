@@ -48,35 +48,6 @@
 	.logo--large {
 		display: none;
 	}
-
-	.maintenance {
-		margin: 0;
-
-		a {
-			color: $color-body;
-			display: block;
-			font-size: $font-size-small;
-			font-weight: $font-weight-body;
-			line-height: 3.6rem;
-			margin: 1.5rem 1rem;
-			padding: 0 1rem;
-			text-decoration: none;
-			text-transform: uppercase;
-			-webkit-transition: color 0.2s;
-			transition: color 0.2s;
-
-			&:hover,
-			&:active {
-				color: $orange;
-			}
-
-			.icon-phone {
-				margin-right: 0.6rem;
-				position: relative;
-				top: 0.2rem;
-			}
-		}
-	}
 }
 
 .night-mode {
@@ -122,14 +93,6 @@
 
 		.logo--large {
 			display: block;
-		}
-
-		.maintenance {
-			margin: 0 2rem 0 0;
-
-			a {
-    		margin: 3.3rem 1rem;
-			}
 		}
 	}
 }

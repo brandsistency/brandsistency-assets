@@ -1,8 +1,9 @@
-/*------------------------------------------------------------
+/*----------------------------------------------------------
 	DEFAULT STYLES
-------------------------------------------------------------*/
+----------------------------------------------------------*/
 
 main {
+	background-color: $white;
   flex: 1 0 auto;
 }
 
@@ -60,6 +61,10 @@ main {
 }
 
 .night-mode {
+	main {
+		background-color: $background-color-night;
+	}
+
 	.content {
 		background-color: $background-color-night;
 

@@ -19,7 +19,7 @@
 		height: 4.8rem;
 		line-height: 4.6rem;
 		margin-bottom: 2rem;
-		padding: 0 15px 1px;
+		padding: 0 15px;
 		transition: border-bottom 0.2s;
 		width: 100% !important;
 	}
@@ -27,7 +27,6 @@
 	textarea {
 		height: 15rem;
 		line-height: 1.7 !important;
-		margin-bottom: 1.2rem;
 		min-width: 99.9%;
 		padding-top: 1rem !important;
 	}
@@ -64,8 +63,12 @@
   display: none !important;
 }
 
-form p.small:not(.not-last) {
-  margin-bottom: 1.5rem;
+form {
+	margin-bottom: 20px;
+
+	p.small:not(.not-last) {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .asterisk {
@@ -80,6 +83,14 @@ ul.form-section {
 
 .form-line {
 	position: relative;
+
+	#cid_8 { // reCAPTCHA
+		margin-top: -0.2rem;
+	}
+
+	#cid_2 { // Submit button
+		margin-bottom: 1.8rem;
+	}
 }
 
 .form-required.asterisk {
@@ -99,15 +110,30 @@ img#__lpform_input_4_icon {
   padding-bottom: 1.6rem;
 }
 
-label.form-label,.mc-field-group label {
-	display: block;
-	font-size: $font-size-small;
-	font-weight: $font-weight-small;
-	left: -9999px;
-	margin-bottom: 0.5rem;
-	position: absolute;
-  top: 0;
+label {
+	&.form-label {
+		display: block;
+		font-size: $font-size-small;
+		font-weight: $font-weight-small;
+		//left: -9999px;
+		margin-bottom: 0.3rem; //0.5rem;
+		//position: absolute;
+		//top: 0;
+
+		&#label_9,
+		&#label_8 {
+			left: -9999px;
+			position: absolute;	
+		}
+	}
 }
+
+.mc-field-group label {
+	left: -9999px;
+	position: absolute;
+}
+
+
 
 @media only screen and (min-width: 600px) {
   .form-required.asterisk {
@@ -187,7 +213,14 @@ label.form-label,.mc-field-group label {
 }
 
 @media only screen and (min-width: 900px) {
-  .mc-button {
+	.form-line {
+		&#id_8 { // reCAPTCHA
+			position: absolute;
+			right: 30px;
+		}
+	}
+
+	.mc-button {
     top: 38px;
   }
 }
@@ -213,9 +246,15 @@ label.form-label,.mc-field-group label {
 
 .form-error-message {
   background-color: transparent !important;
-  margin: -1.6rem 0 1.6rem 0 !important;
+  margin: -1.4rem 0 1.6rem 0 !important;
   padding: 0 !important;
   z-index: 1 !important;
+}
+
+#cid_7 { // Textarea error message
+	.form-error-message {
+		margin: -1.8rem 0 2.2rem 0 !important;
+	}
 }
 
 .form-error-message img {
@@ -233,7 +272,7 @@ label.form-label,.mc-field-group label {
 
 
 .checkbox-wrapper {
-  padding: 0.2rem 0 0.7rem 42px;
+  padding: 0.2rem 0 0 42px;
   position: relative;
 
 	input[type=checkbox] {
@@ -319,20 +358,20 @@ label.form-label,.mc-field-group label {
 
 
 ::-webkit-input-placeholder {
- 	color: #888;
+ 	color: $color-footer;
 }
 
 :-ms-input-placeholder {
-  color: #888;
+  color: $color-footer;
 }
 
 ::-moz-placeholder {
-  color: #888;
+  color: $color-footer;
   opacity: 1;
 }
 
 :-moz-placeholder {
-  color: #888;
+  color: $color-footer;
   opacity: 1;
 }
 
