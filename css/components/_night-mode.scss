@@ -1,6 +1,6 @@
-/*------------------------------------------------------------
+/*----------------------------------------------------------
 	DARK MODE ICON DEFAULT STYLES
-------------------------------------------------------------*/
+----------------------------------------------------------*/
 
 #night-icon {
 	height: 3.8rem;
@@ -22,9 +22,9 @@
 
 
 
-/*------------------------------------------------------------
+/*----------------------------------------------------------
 	DARK MODE STYLE CHANGES
-------------------------------------------------------------*/
+----------------------------------------------------------*/
 
 .night-mode {
 
@@ -72,44 +72,7 @@
 		border-bottom-color: $border-color-footer;
 	}
 
-	// TIMELINE ELEMENTS
-	#timeline {
-		.timeline-item {
-			&:last-child {
-				background-color: $background-color-night;
-			}
 
-			.timeline-icon {
-				background: $background-color-night;
-			}
-
-			.timeline-content {
-				background: $background-color-footer;
-				border-color: $background-color-footer;
-				border-right-color: $border-color-footer;
-
-				&::before {
-					border-left-color: $border-color-footer;
-				}
-
-				&::after {
-					border-left-color: $background-color-footer;
-				}
-
-				&.right {
-					border-left-color: $border-color-footer;
-
-					&::before {
-						border-right-color: $border-color-footer;
-					}
-
-					&::after {
-						border-right-color: $background-color-footer;
-					}
-				}
-			}
-		}
-	}
 
 
 	// Text to change to white
@@ -131,9 +94,9 @@
 
 
 
-/*------------------------------------------------------------
+/*----------------------------------------------------------
 	STYLES FOR SPECIFIC SCREEN SIZES
-------------------------------------------------------------*/
+----------------------------------------------------------*/
 
 @media (min-width: 600px) {
 	#night-icon {
