@@ -1,3 +1,7 @@
+/*----------------------------------------------------------
+	DEFAULT STYLES
+----------------------------------------------------------*/
+
 .button {
 	@include button;
 	width: 100%;
@@ -21,7 +25,13 @@
 	}
 }
 
-@media only screen and (min-width: 500px) and (max-width: 899px) {
+
+
+/*----------------------------------------------------------
+	STYLES FOR SPECIFIC SCREEN SIZES
+----------------------------------------------------------*/
+
+@media (min-width: 500px) and (max-width: 899px) {
 	.button {
 		width: calc(50% - 10px);
 
@@ -31,7 +41,7 @@
 	}
 }
 
-@media only screen and (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899px) {
 	.col-sm-8 {
 		.button {
 			width: 75%;
@@ -45,7 +55,7 @@
 	}
 }
 
-@media only screen and (max-width: 899px) {
+@media (max-width: 899px) {
 	.button {
 		&:nth-child(2) {
 			margin-top: 20px;
@@ -53,7 +63,7 @@
 	}
 }
 
-@media only screen and (min-width: 900px) {
+@media (min-width: 900px) {
 	.button {
 		max-width: 260px;
 		width: calc(25% - 20px);
@@ -76,7 +86,7 @@
 	}
 }
 
-@media only screen and (max-width: 599px) {
+@media (max-width: 599px) {
 	.content {
 		a:not(.button) {
 			&:link,
