@@ -11,7 +11,7 @@
 		content: "";
 		width: 2px;
 		height: calc(99% - 16px);
-		background: $orange;
+		background: $color-highlight;
 		left: 50%;
 		top: 16px;
 		position: absolute;
@@ -51,7 +51,7 @@
 		}
 
 		.timeline-dotted-line {
-			border-left: 5px dotted #fff;
+			border-left: 5px dotted $white;
 			height: 100%;
 			left: calc(50% - 2px);
 			position: absolute;
@@ -61,7 +61,7 @@
 
 		.timeline-content {
 			background: $background-color-panel;
-			border: 1px solid $border-color-panel;
+			border: 1px solid $background-color-panel;
 			border-right-color: $border-color;
 			padding: 20px 25px 25px;
 			width: calc(50% - 65px);
@@ -84,7 +84,7 @@
 			}
 				
 			&::after {
-				border-left: 15px solid $border-color-panel;
+				border-left: 15px solid $background-color-panel;
 				left: calc(50% - 66.5px);
 			}
 
@@ -114,7 +114,7 @@
 				}
 
 				&::after {
-					border-right: 15px solid $border-color-panel;
+					border-right: 15px solid $background-color-panel;
 					right: calc(50% - 66.5px);
 				}
 			}
@@ -126,35 +126,35 @@
 	#timeline {
 		.timeline-item {
 			&:last-child {
-				background-color: $background-color-night;
+				background-color: $background-color-panel-night;
 			}
 
 			.timeline-icon {
-				background: $background-color-night;
+				background: $background-color-footer-night;
 			}
 
 			.timeline-content {
-				background: $background-color-footer;
-				border-color: $background-color-footer;
-				border-right-color: $border-color-footer;
+				background: $background-color-panel-night;
+				border-color: $background-color-panel-night;
+				border-right-color: $border-color-night;
 
 				&::before {
-					border-left-color: $border-color-footer;
+					border-left-color: $border-color-night;
 				}
 
 				&::after {
-					border-left-color: $background-color-footer;
+					border-left-color: $background-color-panel-night;
 				}
 
 				&.right {
-					border-left-color: $border-color-footer;
+					border-left-color: $border-color-night;
 
 					&::before {
-						border-right-color: $border-color-footer;
+						border-right-color: $background-color-panel-night;
 					}
 
 					&::after {
-						border-right-color: $background-color-footer;
+						border-right-color: $background-color-panel-night;
 					}
 				}
 			}
@@ -202,7 +202,7 @@
 					right: calc(100% - 116.5px);
 					left: inherit;
 					border-left: 0;
-					border-right: 15px solid $border-color-panel;
+					border-right: 15px solid $border-color;
 				}
 			}
 
@@ -216,11 +216,11 @@
 		#timeline {
 			.timeline-item {
 				.timeline-content {
-					border-left-color: $border-color-footer;
+					border-left-color: $border-color;
 
 					&::before,
 					&.right::before {
-						border-right-color: $border-color-footer;
+						border-right-color: $border-color;
 					}
 
 					&::after,

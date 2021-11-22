@@ -1,3 +1,4 @@
+
 @media print {
   .no-print,.no-print * {
     display: none !important;
@@ -18,4 +19,11 @@
   .banner .hero {
     padding: 30px 0 0 0;
   }
+}
+
+@page {
+  margin-bottom: 25mm;
+  margin-left: 25mm;
+  margin-right: 25mm;
+  margin-top: 25mm;
 }

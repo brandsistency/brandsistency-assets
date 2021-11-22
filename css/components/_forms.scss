@@ -1,0 +1,214 @@
+
+//====================================================================================================
+// DEFAULT FORM STYLES
+//====================================================================================================
+
+.form {
+	&__label {
+		color: $color-label;
+		display: block;
+		font-size: $font-size-label;
+		margin: calc(#{$font-size-sm} * 1.5) 0 -0.5rem;
+    
+		@media (min-width: $breakpoint-md-min) {
+			margin-top: calc(#{$font-size-lg} * 1.5);
+		}
+	}
+
+	&__input,
+	&__textarea {
+		background-color: $background-color-input;
+		border: none;
+		border-bottom: $border-width-input solid $border-color-input;
+		box-shadow: none;
+		color: $color-input;
+		font-family: $font-family-input;
+		font-size: calc(#{$font-size-sm} * #{$h2-scale});
+		font-weight: $font-weight-h1;
+		height: 4.4rem;
+		line-height: $line-height-input;
+		margin: 0;
+		padding: 0;
+		transition: border-bottom-color $transition-duration $transition-function;
+		width: 100% !important;
+    	
+		@media (min-width: $breakpoint-md-min) {
+			font-size: calc(#{$font-size-lg} * #{$h2-scale});
+			height: 5rem;
+		}
+		
+		// DPR media queries for consistent thickness of lines
+    	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)     { border-bottom-width: calc(#{$border-width-input} * 0.5); }       // 2 DPR (Retina)
+    	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)   { border-bottom-width: calc(#{$border-width-input} * 0.6666667); } // 1.5 DPR
+    	@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi) { border-bottom-width: calc(#{$border-width-input} * 0.769231); }  // 1.3 DPR
+    	@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)  { border-bottom-width: calc(#{$border-width-input} * 0.8); }       // 1.25 DPR
+
+		&:focus {
+			border-bottom-color: $border-color-input-focus;
+			outline: 0;
+
+			+ .form__focus-line {
+				background-color: $border-color-input-focus;
+			}
+		}
+
+		&.error {
+			border-bottom-color: $color-error;
+
+			+ .form__focus-line {
+				background-color: $color-error;
+			}
+		}
+
+		&::-webkit-input-placeholder { color: $color-placeholder; }             // Chrome, Edge, Opera, Safari
+		&::-moz-placeholder          { color: $color-placeholder; opacity: 1; } // Firefox 19+
+		&:-ms-input-placeholder      { color: $color-placeholder; }             // IE 10+
+		&:-moz-placeholder           { color: $color-placeholder; opacity: 1; } // Firefox 18-
+	}
+
+	&__textarea { // Auto-growing span
+        display: block;
+		height: auto; // 23.7rem;
+		//margin-bottom: -0.4rem;
+		min-height: 4.4rem;
+		min-width: 99.9%;
+		padding: 0.5rem 0 0.4rem;
+        overflow: hidden;
+        resize: both;
+    
+		@media (min-width: $breakpoint-md-min) {
+			//height: 18.2rem;
+			min-height: 5rem;
+		}
+		
+		&[contenteditable]:empty::before {
+            content: "I" "\2019" "d like to discuss...";
+            color: $color-placeholder;
+        }
+	}
+	
+	&__attachment {
+	    color: $black;
+	    font-size: $font-size-xs;
+	    font-weight: $font-weight-body;
+	    line-height: 1.75;
+	    margin-top: 1.2rem;
+	}
+	
+	&__button {
+		margin: calc((#{$font-size-sm} * 1.5) + 0.5rem) 0 0;
+    
+		@media (min-width: $breakpoint-md-min) {
+			margin-top: calc((#{$font-size-lg} * 1.5) + 0.5rem);
+		}
+	}
+
+	&__focus-line {
+		background-color: transparent;
+		height: 0.1rem;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		
+		// DPR media queries for consistent thickness of lines
+    	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)     { height: calc(0.1rem * 0.5); }       // 2 DPR (Retina)
+    	@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)   { height: calc(0.1rem * 0.6666667); } // 1.5 DPR
+    	@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi) { height: calc(0.1rem * 0.769231); }  // 1.3 DPR
+    	@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)  { height: calc(0.1rem * 0.8); }       // 1.25 DPR
+	}
+    
+	&__error-message {
+		background-color: transparent !important;
+		color: $color-error !important;
+		display: block;
+		font-size: $font-size-label !important;
+		font-weight: $font-weight-link !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		
+		.error {
+		    padding-top: 0.2rem;
+		}
+	}
+}
+
+.asterisk {
+	color: $color-highlight;
+	font-weight: $font-weight-link;
+}
+
+
+
+//====================================================================================================
+// GOOGLE RECAPTCHA V3 POSITIONING
+//====================================================================================================
+
+.grecaptcha-badge {
+	position: absolute !important;
+	bottom: 75rem !important;
+	
+	@media (min-width: 514px) {
+		bottom: 73rem !important;
+	}
+
+	@media (min-width: $breakpoint-sm-min) {
+		bottom: 54.5rem !important;
+	}
+
+	@media (min-width: $breakpoint-md-min) {
+		bottom: 70.5rem !important;
+	}
+
+	@media (min-width: $breakpoint-lg-min) {
+		bottom: 52rem !important;
+	}
+}
+
+
+
+//====================================================================================================
+// NIGHT MODE OVERRIDES
+//====================================================================================================
+
+.night-mode {
+	.form {
+		&__label {
+			color: $color-label-night;
+		}
+
+		&__input,
+		&__textarea {
+			background-color: $background-color-input-night;
+			border-bottom-color: $border-color-input-night;
+			color: $color-input-night;
+
+			&:focus {
+				border-bottom-color: $border-color-input-focus-night;
+	
+				+ form__focus-line {
+					background-color: $border-color-input-focus-night;
+				}
+			}
+	
+			&.error {
+				border-bottom-color: $color-error-night;
+	
+				+ form__focus-line {
+					background-color: $color-error-night;
+				}
+			}
+
+			&::-webkit-input-placeholder { color: $color-placeholder-night; }             // Chrome, Edge, Opera, Safari
+			&::-moz-placeholder          { color: $color-placeholder-night; opacity: 1; } // Firefox 19+
+			&:-ms-input-placeholder      { color: $color-placeholder-night; }             // IE 10+
+			&:-moz-placeholder           { color: $color-placeholder-night; opacity: 1; } // Firefox 18-
+	
+		}
+		
+		&__textarea {
+    		&[contenteditable]:empty::before {
+                color: $color-placeholder-night;
+    		}
+		}
+	}
+}

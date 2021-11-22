@@ -1,93 +1,96 @@
 
+//====================================================================================================
+// DEFAULT LIST STYLES
+//====================================================================================================
 
-main {
+main { // To avoid conflicts with nav and footer lists
 	ul {
-		line-height: 1.6;
-
+		line-height: $line-height-body;
+		list-style: none;
+	
 		li {
-			list-style-type: none;
-			margin-left: 1.7rem;
-
-			&:not(:last-child),
-			&.last {
+			margin-left: $font-size-sm;
+	
+			@media (min-width: $breakpoint-md-min) {
+				margin-left: $font-size-lg;
+			}
+					
+			&:not(:last-child) {
 				margin-bottom: 0;
 			}
-
+    
 			&::before {
-				color: $orange;
+				color: $color-highlight;
 				content: '\2022';
-				font-size: 2.48rem;
-				line-height: 1.5rem;
-				margin-left: -1.7rem;
-				padding-right: 0.8rem;
+				font-size: calc(#{$font-size-sm} * 1.75);
+				line-height: $font-size-sm;
+				margin-left: -$font-size-sm;
+				padding-right: calc(#{$font-size-sm} / 2);
 				position: relative;
-				top: 0.4rem;
+				top: calc(#{$font-size-sm} / 3);
+    
+				@media (min-width: $breakpoint-md-min) {
+					font-size: calc(#{$font-size-lg} * 1.75);
+					line-height: $font-size-lg;
+					margin-left: -$font-size-lg;
+					padding-right: calc(#{$font-size-lg} / 2);
+					top: calc(#{$font-size-lg} / 3);
+				}
 			}
 		}
 	}
-
+    
 	ol {
-  	counter-reset: li;
-		line-height: 1.6;
-  	list-style: none;
-
+		counter-reset: li;
+		line-height: $line-height-body;
+		list-style: none;
+    
 		li {
 			counter-increment: li;
-			margin-left: 1.8rem;
-
+			margin-left: calc(#{$font-size-sm} * 1.5);
+    
+			@media (min-width: $breakpoint-md-min) {
+				margin-left: calc(#{$font-size-lg} * 1.5);
+			}
+    
 			&::before {
-				color: $orange;
+				color: $color-highlight;
 				content: counter(li) ".";
 				display: inline-block;
-				font-weight: 400;
-				margin-left: -1.9rem;
-				width: 1.9rem;
-			}
-		}
-
-		&.terms {
-			li {
-				margin-bottom: $font-size-body-small;
-			}
-		}
-	}
-
-	.timeline-content {
-		ul {
-  		margin-top: 1.7rem;
-
-			li:last-of-type {
-				margin-bottom: 0;
+				font-weight: normal;
+				margin-left: calc(#{$font-size-sm} * -1.5);
+				width: calc(#{$font-size-sm} * 1.5);
+    
+				@media (min-width: $breakpoint-md-min) {
+					margin-left: calc(#{$font-size-lg} * -1.5);
+					width: calc(#{$font-size-lg} * 1.5);
+				}
 			}
 		}
 	}
 }
 
-@media only screen and (min-width: 600px) and (min-height: 600px) {
-  main {
-		ul {
-			li {
-				&::before {
-					font-size: 2.635rem;
-				}
-			}
+
+//====================================================================================================
+// CONTEXT-SPECIFIC OVERRIDES
+//====================================================================================================
+
+ol.terms {
+	li {
+		margin-bottom: $font-size-sm;
+
+		@media (min-width: $breakpoint-md-min) {
+			margin-bottom: $font-size-lg;
 		}
+	}
+}
 
-		ol {
-			li {
-				margin-left: 2.1rem;
+.timeline-content {
+	ul {
+  	margin-top: 1.7rem;
 
-				&::before {
-			    margin-left: -2.2rem;
-					width: 2.2rem;
-				}
-			}
-
-			&.terms {
-				li {
-					margin-bottom: $font-size-body-large;
-				}
-			}
+		li:last-of-type {
+			margin-bottom: 0;
 		}
-  }
+	}
 }

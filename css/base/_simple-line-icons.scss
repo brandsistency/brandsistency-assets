@@ -1,0 +1,251 @@
+
+//====================================================================================================
+// SIMPLE LINE ICONS
+//====================================================================================================
+
+//--------------------------------------------------
+// DEFAULT STYLES                      [DO NOT EDIT]
+//--------------------------------------------------
+
+@font-face {
+	font-family: 'Simple-Line-Icons'; // All font variants v=2.4.0
+	font-style: normal;
+	font-weight: normal;
+	src: url("fonts/Simple-Line-Icons.eot");
+	src: url("fonts/Simple-Line-Icons.eot#iefix") format("embedded-opentype"),
+			 url("fonts/Simple-Line-Icons.ttf") format("truetype"),
+			 url("fonts/Simple-Line-Icons.woff2") format("woff2"),
+			 url("fonts/Simple-Line-Icons.woff") format("woff"),
+			 url("fonts/Simple-Line-Icons.svg#simple-line-icons") format("svg");
+}
+
+[class^="icon-"] {
+	font-family: "Simple-Line-Icons" !important;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+	&::before {
+		position: relative;
+	}
+}
+
+//--------------------------------------------------
+// ICONS IN USE
+//--------------------------------------------------
+
+.icon- {
+	&arrow-down::before  { content: "\e604"; font-weight: $bold; } // Scroll-down arrows
+	&arrow-right::before { content: "\e606"; font-weight: $bold; } // Button chevrons
+	&arrow-up::before    { content: "\e607"; font-weight: $bold; } // Back-to-top arrow
+
+	&new-window::before {
+		bottom: 0.1rem;
+		content: "\e05a";
+		font-size: 1.3rem;
+		font-weight: $bold;
+		position: relative;
+	}
+}
+
+//--------------------------------------------------
+// COMPLETE LIBRARY                    [DO NOT EDIT]
+//--------------------------------------------------
+
+// REFER TO https://simplelineicons.github.io/
+
+/*.icon- {
+    &action-redo::before        { content: "\e051"; }
+    &action-undo::before        { content: "\e050"; }
+    &anchor::before             { content: "\e029"; }
+    &arrow-down::before         { content: "\e604"; }
+    &arrow-down-circle::before  { content: "\e07b"; }
+    &arrow-left::before         { content: "\e605"; }
+    &arrow-left-circle::before  { content: "\e07a"; }
+    &arrow-right::before        { content: "\e606"; }
+    &arrow-right-circle::before { content: "\e079"; }
+    &arrow-up::before           { content: "\e607"; }
+    &arrow-up-circle::before    { content: "\e078"; }
+    &badge::before              { content: "\e028"; }
+    &bag::before                { content: "\e04f"; }
+    &ban::before                { content: "\e07c"; }
+    &basket::before             { content: "\e04e"; }
+    &basket-loaded::before      { content: "\e04d"; }
+    &bell::before               { content: "\e027"; }
+    &book-open::before          { content: "\e04c"; }
+    &briefcase::before          { content: "\e04b"; }
+    &bubble::before             { content: "\e07d"; }
+    &bubbles::before            { content: "\e04a"; }
+    &bulb::before               { content: "\e076"; }
+    &calculator::before         { content: "\e049"; }
+    &calendar::before           { content: "\e075"; }
+    &call-end::before           { content: "\e048"; }
+    &call-in::before            { content: "\e047"; }
+    &call-out::before           { content: "\e046"; }
+    &camera::before             { content: "\e07f"; }
+    &camrecorder::before        { content: "\e07e"; }
+    &chart::before              { content: "\e077"; }
+    &check::before              { content: "\e080"; }
+    &chemistry::before          { content: "\e026"; }
+    &clock::before              { content: "\e081"; }
+    &close::before              { content: "\e082"; }
+    &cloud-download::before     { content: "\e083"; }
+    &cloud-upload::before       { content: "\e084"; }
+    &compass::before            { content: "\e045"; }
+    &control-end::before        { content: "\e074"; }
+    &control-forward::before    { content: "\e073"; }
+    &control-pause::before      { content: "\e072"; }
+    &control-play::before       { content: "\e071"; }
+    &control-rewind::before     { content: "\e070"; }
+    &control-start::before      { content: "\e06f"; }
+    &credit-card::before        { content: "\e025"; }
+    &crop::before               { content: "\e024"; }
+    &cup::before                { content: "\e044"; }
+    &cursor::before             { content: "\e06e"; }
+    &cursor-move::before        { content: "\e023"; }
+    &diamond::before            { content: "\e043"; }
+    &direction::before          { content: "\e042"; }
+    &directions::before         { content: "\e041"; }
+    &disc::before               { content: "\e022"; }
+    &dislike::before            { content: "\e06d"; }
+    &doc::before                { content: "\e085"; }
+    &docs::before               { content: "\e040"; }
+    &drawer::before             { content: "\e03f"; }
+    &drop::before               { content: "\e03e"; }
+    &earphones::before          { content: "\e03d"; }
+    &earphones-alt::before      { content: "\e03c"; }
+    &emotsmile::before          { content: "\e021"; }
+    &energy::before             { content: "\e020"; }
+    &envelope::before           { content: "\e086"; }
+    &envelope-letter::before    { content: "\e01f"; }
+    &envelope-open::before      { content: "\e01e"; }
+    &equalizer::before          { content: "\e06c"; }
+    &event::before              { content: "\e619"; }
+    &exclamation::before        { content: "\e617"; }
+    &eye::before                { content: "\e087"; }
+    &eyeglass::before           { content: "\e01d"; }
+    &feed::before               { content: "\e03b"; }
+    &film::before               { content: "\e03a"; }
+    &fire::before               { content: "\e01c"; }
+    &flag::before               { content: "\e088"; }
+    &folder::before             { content: "\e089"; }
+    &folder-alt::before         { content: "\e039"; }
+    &frame::before              { content: "\e038"; }
+    &game-controller::before    { content: "\e01b"; }
+    &ghost::before              { content: "\e01a"; }
+    &globe::before              { content: "\e037"; }
+    &globe-alt::before          { content: "\e036"; }
+    &graduation::before         { content: "\e019"; }
+    &graph::before              { content: "\e06b"; }
+    &grid::before               { content: "\e06a"; }
+    &handbag::before            { content: "\e035"; }
+    &heart::before              { content: "\e08a"; }
+    &home::before               { content: "\e069"; }
+    &hourglass::before          { content: "\e018"; }
+    &info::before               { content: "\e08b"; }
+    &key::before                { content: "\e08c"; }
+    &layers::before             { content: "\e034"; }
+    &like::before               { content: "\e068"; }
+    &link::before               { content: "\e08d"; }
+    &list::before               { content: "\e067"; }
+    &location-pin::before       { content: "\e096"; }
+    &lock::before               { content: "\e08e"; }
+    &lock-open::before          { content: "\e08f"; }
+    &login::before              { content: "\e066"; }
+    &logout::before             { content: "\e065"; }
+    &loop::before               { content: "\e064"; }
+    &magic-wand::before         { content: "\e017"; }
+    &magnet::before             { content: "\e016"; }
+    &magnifier::before          { content: "\e090"; }
+    &magnifier-add::before      { content: "\e091"; }
+    &magnifier-remove::before   { content: "\e092"; }
+    &map::before                { content: "\e033"; }
+    &menu::before               { content: "\e601"; }
+    &microphone::before         { content: "\e063"; }
+    &minus::before              { content: "\e615"; }
+    &mouse::before              { content: "\e015"; }
+    &music-tone::before         { content: "\e062"; }
+    &music-tone-alt::before     { content: "\e061"; }
+    &mustache::before           { content: "\e014"; }
+    &note::before               { content: "\e060"; }
+    &notebook::before           { content: "\e013"; }
+    &options::before            { content: "\e603"; }
+    &options-vertical::before   { content: "\e602"; }
+    &organization::before       { content: "\e616"; }
+    &paper-clip::before         { content: "\e093"; }
+    &paper-plane::before        { content: "\e094"; }
+    &paypal::before             { content: "\e608"; }
+    &pencil::before             { content: "\e05f"; }
+    &people::before             { content: "\e001"; }
+    &phone::before              { content: "\e600"; }
+    &picture::before            { content: "\e032"; }
+    &pie-chart::before          { content: "\e05e"; }
+    &pin::before                { content: "\e031"; }
+    &plane::before              { content: "\e012"; }
+    &playlist::before           { content: "\e030"; }
+    &plus::before               { content: "\e095"; }
+    &power::before              { content: "\e097"; }
+    &present::before            { content: "\e02f"; }
+    &printer::before            { content: "\e02e"; }
+    &puzzle::before             { content: "\e02d"; }
+    &question::before           { content: "\e05d"; }
+    &refresh::before            { content: "\e098"; }
+    &reload::before             { content: "\e099"; }
+    &rocket::before             { content: "\e05c"; }
+    &screen-desktop::before     { content: "\e011"; }
+    &screen-smartphone::before  { content: "\e010"; }
+    &screen-tablet::before      { content: "\e00f"; }
+    &settings::before           { content: "\e09a"; }
+    &share::before              { content: "\e05b"; }
+    &share-alt::before          { content: "\e05a"; }
+    &shield::before             { content: "\e00e"; }
+    &shuffle::before            { content: "\e059"; }
+    &size-actual::before        { content: "\e058"; }
+    &size-fullscreen::before    { content: "\e057"; }
+    &social-behance::before     { content: "\e610"; }
+    &social-dribbble::before    { content: "\e00d"; }
+    &social-dropbox::before     { content: "\e00c"; }
+    &social-facebook::before    { content: "\e00b"; }
+    &social-foursqare::before   { content: "\e611"; }
+    &social-github::before      { content: "\e60c"; }
+    &social-google::before      { content: "\e60d"; }
+    &social-instagram::before   { content: "\e609"; }
+    &social-linkedin::before    { content: "\e60a"; }
+    &social-pinterest::before   { content: "\e60b"; }
+    &social-reddit::before      { content: "\e60e"; }
+    &social-skype::before       { content: "\e60f"; }
+    &social-soundcloud::before  { content: "\e612"; }
+    &social-spotify::before     { content: "\e613"; }
+    &social-steam::before       { content: "\e620"; }
+    &social-stumbleupon::before { content: "\e614"; }
+    &social-tumblr::before      { content: "\e00a"; }
+    &social-twitter::before     { content: "\e009"; }
+    &social-vkontakte::before   { content: "\e618"; }
+    &social-youtube::before     { content: "\e008"; }
+    &speech::before             { content: "\e02c"; }
+    &speedometer::before        { content: "\e007"; }
+    &star::before               { content: "\e09b"; }
+    &support::before            { content: "\e056"; }
+    &symbol-female::before      { content: "\e09c"; }
+    &symbol-male::before        { content: "\e09d"; }
+    &tag::before                { content: "\e055"; }
+    &target::before             { content: "\e09e"; }
+    &trash::before              { content: "\e054"; }
+    &trophy::before             { content: "\e006"; }
+    &umbrella::before           { content: "\e053"; }
+    &user::before               { content: "\e005"; }
+    &user-female::before        { content: "\e000"; }
+    &user-follow::before        { content: "\e002"; }
+    &user-following::before     { content: "\e003"; }
+    &user-unfollow::before      { content: "\e004"; }
+    &vector::before             { content: "\e02b"; }
+    &volume-1::before           { content: "\e09f"; }
+    &volume-2::before           { content: "\e0a0"; }
+    &volume-off::before         { content: "\e0a1"; }
+    &wallet::before             { content: "\e02a"; }
+    &wrench::before             { content: "\e052"; }
+}*/

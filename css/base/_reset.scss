@@ -1,15 +1,18 @@
-/*----------------------------------------------------------
-	GENERAL RESETS
-----------------------------------------------------------*/
+
+//====================================================================================================
+// GENERAL RESETS                                                                        [DO NOT EDIT]
+//====================================================================================================
 
 html {
 	height: 100%;
-	overflow: scroll; // Force vertical scrollbar to avoid page width 'jumping'
+	overflow: scroll; // Force vertical scrollbar to avoid page width 'jumping' between long and short pages
 	overflow-x: hidden;
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
 body {
+	background: $background-color-body;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -42,120 +45,12 @@ img {
 
 
 
-/*----------------------------------------------------------
-	POSITIONING AND SPACING
-----------------------------------------------------------*/
+//====================================================================================================
+// NIGHT MODE OVERIDES
+//====================================================================================================
 
-.left {
-	text-align: left
-}
-
-.right {
-	text-align: right
-}
-
-.center {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto
-}
-
-.justify {
-	text-align: justify
-}
-
-.nowrap {
-	white-space: nowrap
-}
-
-.relative {
-	position: relative
-}
-
-.m-0 {
-	margin-bottom: 0 !important;
-	margin-top: 0 !important
-}
-
-.mb-0 {
-	margin-bottom: 0 !important
-}
-
-.mt-0 {
-	margin-top: 0 !important
-}
-
-.p-0 {
-	padding-bottom: 0 !important;
-	padding-top: 0 !important
-}
-
-.pb-0 {
-	padding-bottom: 0 !important
-}
-
-.pt-0 {
-	padding-top: 0 !important
-}
-
-.bdr-0 {
-	border: none !important
-}
-
-
-
-/*----------------------------------------------------------
-	HIDING BASED ON SCREEN SIZE
-----------------------------------------------------------*/
-
-.hidden {
-	display: none !important;
-}
-
-@media (max-width: 599px) {
-	.hidden-xs {
-		display: none !important;
-	}
-}
-
-@media (min-width: 600px) and (max-width: 899px) {
-	.hidden-sm {
-		display: none !important;
-	}
-}
-
-@media (min-width: 600px) {
-	.hidden-sm-up {
-		display: none !important;
-	}
-}
-
-@media (min-width: 900px) and (max-width: 1199px) {
-	.hidden-md {
-		display: none !important;
-	}
-}
-
-@media (min-width: 900px) {
-	.hidden-md-up {
-		display: none !important;
-	}
-}
-
-@media (min-width: 1200px) and (max-width: 1799px) {
-	.hidden-lg {
-		display: none !important;
-	}
-}
-
-@media (min-width: 1200px) {
-	.hidden-lg-up {
-		display: none !important;
-	}
-}
-
-@media (min-width: 1800px) {
-	.hidden-xl {
-		display: none !important;
+.night-mode {
+	body {
+		background: $background-color-body-night;
 	}
 }

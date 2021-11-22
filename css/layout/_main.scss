@@ -1,0 +1,17 @@
+
+//====================================================================================================
+// DEFAULT MAIN STYLES
+//====================================================================================================
+
+main {
+    flex: 1 0 auto; // Stretches <main> to fill space between header and footer when content is short
+	padding: 8rem 0 6.5rem;
+	
+	@media (min-width: $breakpoint-md-min) {
+    	padding: 10.5rem 0 12.5rem;
+	}
+
+	@media (min-width: calc(#{$breakpoint-lg-min} * 2)) {
+    	padding: 15.5rem 0 17.5rem;
+	}
+}

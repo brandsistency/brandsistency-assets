@@ -1,0 +1,328 @@
+
+//====================================================================================================
+// MARGIN, PADDING AND BORDER
+//====================================================================================================
+
+.m-0  { margin: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.ml-0 { margin-left: 0 !important; }
+.mr-0 { margin-right: 0 !important; }
+.mt-0 { margin-top: 0 !important; }
+.mx-0 { margin-left: 0 !important; margin-right: 0 !important; }
+.my-0 { margin-bottom: 0 !important; margin-top: 0 !important; }
+
+.p-0  { padding: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
+.pl-0 { padding-left: 0 !important; }
+.pr-0 { padding-right: 0 !important; }
+.pt-0 { padding-top: 0 !important; }
+.px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.py-0 { padding-bottom: 0 !important; padding-top: 0 !important; }
+
+.bdr-0 { border: none !important }
+
+
+
+//====================================================================================================
+// ALIGNMENT
+//====================================================================================================
+
+//----------------------------------------------------------------------------------------------------
+// NON-WRAPPING TEXT
+//----------------------------------------------------------------------------------------------------
+
+.nowrap {
+    white-space: nowrap;
+    
+    &-xs  { @media (max-width: $breakpoint-xs-max)  { white-space: nowrap; } }
+    &-sm  { @media (min-width: $breakpoint-sm-min)  { white-space: nowrap; } }
+    &-md  { @media (min-width: $breakpoint-md-min)  { white-space: nowrap; } }
+    &-lg  { @media (min-width: $breakpoint-lg-min)  { white-space: nowrap; } }
+    &-xl  { @media (min-width: $breakpoint-xl-min)  { white-space: nowrap; } }
+    &-xxl { @media (min-width: $breakpoint-xxl-min) { white-space: nowrap; } }
+}
+
+
+
+
+
+// DIV ALIGNMENT
+.left,
+.div-l {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.center,
+.div-c {
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.right
+.div-r {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------
+// QUICK FLOATS
+//----------------------------------------------------------------------------------------------------
+
+.fl-l { 
+	float: left !important;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { float: left !important; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { float: left !important; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { float: left !important; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { float: left !important; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { float: left !important; } }
+}
+
+.fl-r { 
+	float: right !important;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { float: right !important; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { float: right !important; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { float: right !important; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { float: right !important; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { float: right !important; } }	
+}
+
+.fl-n { 
+	float: none !important;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { float: none !important; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { float: none !important; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { float: none !important; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { float: none !important; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { float: none !important; } }
+}
+
+//----------------------------------------------------------------------------------------------------
+// TEXT ALIGNMENT
+//----------------------------------------------------------------------------------------------------
+
+.ta-c { 
+	text-align: center;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { text-align: center; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { text-align: center; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { text-align: center; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { text-align: center; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { text-align: center; } }
+
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.ta-j { 
+	text-align: justify;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { text-align: justify; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { text-align: justify; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { text-align: justify; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { text-align: justify; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { text-align: justify; } }
+
+	img {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.ta-l { 
+	text-align: left;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { text-align: left; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { text-align: left; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { text-align: left; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { text-align: left; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { text-align: left; } }
+
+	img {
+		margin-left: 0;
+		margin-right: auto;
+	}
+}
+
+.ta-r { 
+	text-align: right;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { text-align: right; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { text-align: right; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { text-align: right; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { text-align: right; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { text-align: right; } }
+
+	img {
+		margin-left: auto;
+		margin-right: 0;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------
+// OBJECT-FIT
+//----------------------------------------------------------------------------------------------------
+
+.of-f  {
+	object-fit: fill;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { object-fit: fill; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { object-fit: fill; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { object-fit: fill; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { object-fit: fill; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { object-fit: fill; } }
+}
+
+.of-cn  {
+	object-fit: contain;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { object-fit: contain; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { object-fit: contain; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { object-fit: contain; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { object-fit: contain; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { object-fit: contain; } }
+}
+
+.of-cr  {
+	object-fit: cover;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { object-fit: cover; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { object-fit: cover; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { object-fit: cover; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { object-fit: cover; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { object-fit: cover; } }
+}
+
+.of-n  {
+	object-fit: none;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { object-fit: none; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { object-fit: none; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { object-fit: none; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { object-fit: none; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { object-fit: none; } }
+}
+
+.of-sd  {
+	object-fit: scale-down;
+
+	@media (min-width: $breakpoint-sm-min)  { &-sm  { object-fit: scale-down; } }
+	@media (min-width: $breakpoint-md-min)  { &-md  { object-fit: scale-down; } }	
+	@media (min-width: $breakpoint-lg-min)  { &-lg  { object-fit: scale-down; } }
+	@media (min-width: $breakpoint-xl-min)  { &-xl  { object-fit: scale-down; } }
+	@media (min-width: $breakpoint-xxl-min) { &-xxl { object-fit: scale-down; } }
+}
+
+
+
+/*====================================================================================================
+// FLEXBOX ALIGNMENT
+//====================================================================================================
+
+// HORIZONTAL ALIGNMENT (ON ROWS)
+.jc-fs { justify-content: flex-start; }
+.jc-c  { justify-content: center }
+.jc-fe { justify-content: flex-end; }
+.jc-sb { justify-content: space-between; }
+.jc-sa { justify-content: space-around; }
+.jc-se { justify-content: space-evenly; }
+
+@media (min-width: $breakpoint-sm-min) {
+	.jc-fs-sm { justify-content: flex-start; }
+	.jc-c-sm  { justify-content: center }
+	.jc-fe-sm { justify-content: flex-end; }
+	.jc-sb-sm { justify-content: space-between; }
+	.jc-sa-sm { justify-content: space-around; }
+	.jc-se-sm { justify-content: space-evenly; }
+}
+
+@media (min-width: $breakpoint-md-min) {
+	.jc-fs-md { justify-content: flex-start; }
+	.jc-c-md  { justify-content: center }
+	.jc-fe-md { justify-content: flex-end; }
+	.jc-sb-md { justify-content: space-between; }
+	.jc-sa-md { justify-content: space-around; }
+	.jc-se-md { justify-content: space-evenly; }
+}
+
+@media (min-width: $breakpoint-lg-min) {
+	.jc-fs-lg { justify-content: flex-start; }
+	.jc-c-lg  { justify-content: center }
+	.jc-fe-lg { justify-content: flex-end; }
+	.jc-sb-lg { justify-content: space-between; }
+	.jc-sa-lg { justify-content: space-around; }
+	.jc-se-lg { justify-content: space-evenly; }
+}
+
+@media (min-width: $breakpoint-xl-min) {
+	.jc-fs-xl { justify-content: flex-start; }
+	.jc-c-xl  { justify-content: center }
+	.jc-fe-xl { justify-content: flex-end; }
+	.jc-sb-xl { justify-content: space-between; }
+	.jc-sa-xl { justify-content: space-around; }
+	.jc-se-xl { justify-content: space-evenly; }
+}
+
+@media (min-width: $breakpoint-xxl-min) {
+	.jc-fs-xxl { justify-content: flex-start; }
+	.jc-c-xxl  { justify-content: center }
+	.jc-fe-xxl { justify-content: flex-end; }
+	.jc-sb-xxl { justify-content: space-between; }
+	.jc-sa-xxl { justify-content: space-around; }
+	.jc-se-xxl { justify-content: space-evenly; }
+}
+
+// VERTICAL ALIGNMENT (ON ROWS)
+.ai-fs { align-items: flex-start; }
+.ai-c  { align-items: center; }
+.ai-fe { align-items: flex-end; }
+.ai-s  { align-items: stretch; }
+.ai-b  { align-items: baseline; }
+
+@media (min-width: $breakpoint-sm-min) {
+	.ai-fs-sm { align-items: flex-start; }
+	.ai-c-sm  { align-items: center; }
+	.ai-fe-sm { align-items: flex-end; }
+	.ai-s-sm  { align-items: stretch; }
+	.ai-b-sm  { align-items: baseline; }
+}
+
+@media (min-width: $breakpoint-md-min) {
+	.ai-fs-md { align-items: flex-start; }
+	.ai-c-md  { align-items: center; }
+	.ai-fe-md { align-items: flex-end; }
+	.ai-s-md  { align-items: stretch; }
+	.ai-b-md  { align-items: baseline; }
+}
+
+@media (min-width: $breakpoint-lg-min) {
+	.ai-fs-lg { align-items: flex-start; }
+	.ai-c-lg  { align-items: center; }
+	.ai-fe-lg { align-items: flex-end; }
+	.ai-s-lg  { align-items: stretch; }
+	.ai-b-lg  { align-items: baseline; }
+}
+
+@media (min-width: $breakpoint-xl-min) {
+	.ai-fs-xl { align-items: flex-start; }
+	.ai-c-xl  { align-items: center; }
+	.ai-fe-xl { align-items: flex-end; }
+	.ai-s-xl  { align-items: stretch; }
+	.ai-b-xl  { align-items: baseline; }
+}
+
+@media (min-width: $breakpoint-xxl-min) {
+	.ai-fs-xxl { align-items: flex-start; }
+	.ai-c-xxl  { align-items: center; }
+	.ai-fe-xxl { align-items: flex-end; }
+	.ai-s-xxl  { align-items: stretch; }
+	.ai-b-xxl  { align-items: baseline; }
+}*/

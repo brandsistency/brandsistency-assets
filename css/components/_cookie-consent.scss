@@ -1,0 +1,86 @@
+
+//====================================================================================================
+// INSITE COOKIE CONSENT OVERRIDES
+//====================================================================================================
+
+.cc-window {
+	@include box-shadow-top;
+	background: $background-color-footer;
+	color: $white;
+	font-family: $font-family-body;
+	font-size: $font-size-sm;
+	line-height: $line-height-body;
+	opacity: 1;
+	overflow: hidden;
+	padding: calc(#{$grid-gutter-width} / 2);
+	position: fixed;
+	transform: translateY(0);
+	transition: transform $transition-duration $transition-function, opacity $transition-duration $transition-function $transition-delay;
+	width: 100%;
+	z-index: $z-index-cookie-consent;
+	
+	@media (min-width: $breakpoint-md-min) {
+		font-size: $font-size-lg;        
+    	padding: calc(#{$grid-gutter-width} / 2) $grid-gutter-width;
+	}
+	
+	@media (min-width: $breakpoint-lg-min) {
+		align-items: center;
+		display: flex;
+	}
+
+	@media (min-width: 1360px) {
+    	padding: 1.6rem calc((100% - 1280px) / 2);
+	}
+
+	&.cc-bottom {
+		bottom: 0;
+	}
+
+	&.cc-invisible {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	.cc-message,
+	.cc-compliance {
+		display: block;
+	}
+
+	.cc-message {
+		padding-bottom: $font-size-sm;
+	    
+		@media (min-width: $breakpoint-md-min) {
+    		padding-bottom: $font-size-lg;
+		}
+
+		@media (min-width: $breakpoint-lg-min) {
+			padding-bottom: calc(#{$font-size-sm} / 4);
+			padding-right: 10%;
+			width: 80%;
+		}
+	    
+		&::after {
+			content: '.'; // Adds end-of-message full stop that is not included in Insite JavaScript
+		}
+		
+
+		a.cc-link {
+			color: $white;
+
+			&::after {
+				background: $white;
+			}
+		}		
+	}
+
+	.cc-compliance {
+	    padding-bottom: calc(#{$font-size-sm} / 4);
+	    
+		@media (min-width: $breakpoint-lg-min) {
+		    padding-right: 2rem;
+		    text-align: right;
+			width: 20%;
+		}
+	}
+}

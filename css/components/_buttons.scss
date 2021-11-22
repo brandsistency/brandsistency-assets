@@ -1,100 +1,115 @@
-/*----------------------------------------------------------
-	DEFAULT STYLES
-----------------------------------------------------------*/
 
+//====================================================================================================
+// DEFAULT BUTTON STYLES
+//====================================================================================================
+
+// Buttons use same underline style as links but with a chevron arrow
+
+button,
+.button,
+.cc-btn {
+    background-color: transparent;
+    border: none;
+    position: relative;
+
+	@include hover-effect-chevron-lrl; // Hover effect arrow using ::before pseudo class
+}
+
+/*button,
 .button {
-	@include button;
-	width: 100%;
+	background-color: $background-button;
+	border-bottom: $border-button;
+	border-radius: $border-radius-button;
+    color: $color-button;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family-button;
+	font-size: $font-size-button-sm;
+	font-weight: $font-weight-button;
+	height: $height-button;
+	line-height: $line-height-button;
+	margin: $margin-button;
+	padding: $padding-button;
+	position: relative;
+	text-decoration: none;
+	white-space: nowrap;
 
-	&:focus,
-	&:hover,
-	&:active {
-		@include button-hover;
+	@media (min-width: $breakpoint-md-min) {
+		font-size: $font-size-button-lg;
 	}
-}
-
-.content {
-	.button {
-		margin: 1rem 0;
-	}
-}
-
-.tertiary {
-	.button {
-		margin: 1rem auto;
-	}
-}
-
-
-
-/*----------------------------------------------------------
-	STYLES FOR SPECIFIC SCREEN SIZES
-----------------------------------------------------------*/
-
-@media (min-width: 500px) and (max-width: 899px) {
-	.button {
-		width: calc(50% - 10px);
-
-		&:nth-child(2) {
-			margin-left: 20px;
-		}
-	}
-}
-
-@media (min-width: 600px) and (max-width: 899px) {
-	.col-sm-8 {
-		.button {
-			width: 75%;
-		}
+	
+	&:hover {
+    	background-color: $background-button-hover;
+    	border-bottom: $border-button-hover;
+    	color: $color-button-hover;
 	}
 
-	.col-sm-10 {
-		.button {
-			width: calc((50% * 1.2) - 6px);
-		}
-	}
-}
+	&.secondary {
+    	background-color: $background-button-sec;
+    	border: $border-button-sec;
+    	color: $color-button-sec;
 
-@media (max-width: 899px) {
-	.button {
-		&:nth-child(2) {
-			margin-top: 20px;
-		}
-	}
-}
-
-@media (min-width: 900px) {
-	.button {
-		max-width: 260px;
-		width: calc(25% - 20px);
+    	&:hover {
+        	background-color: $background-button-sec-hover;
+        	border: $border-button-sec-hover;
+        	color: $color-button-sec-hover;
+    	}
 	}
 
-	.col-md-6 {
-		.button {
-			width: calc(50% - 10px);
+	&.tertiary {
+    	background-color: $background-button-ter;
+    	border: $border-button-ter;
+    	color: $color-button-ter;
 
-			&:nth-child(2) {
-				margin-left: 20px;
-			}
-		}
+    	&:hover {
+        	background-color: $background-button-ter-hover;
+        	border: $border-button-ter-hover;
+        	color: $color-button-ter-hover;
+    	}
 	}
+}*/
 
-	.col-md-8 {
-		.button {
-			width: calc((50% / 1.33333333) - 15px);
-		}
-	}
-}
 
-@media (max-width: 599px) {
-	.content {
-		a:not(.button) {
-			&:link,
-			&:visited {
-				span {
-					font-size: 1.2rem;
-				}
-			}
-		}
-	}
-}
+
+/*====================================================================================================
+// NIGHT MODE OVERRIDES
+//====================================================================================================
+
+.night-mode {
+    .button
+    button {
+        background-color: $background-button-night;
+        border-bottom: $border-button-night;
+        color: $color-button-night;
+        
+        &:hover {
+            background-color: $background-button-hover-night;
+            border-bottom: $border-button-hover-night;
+            color: $color-button-hover-night;
+        }
+
+        /*&.secondary {
+            background-color: $background-button-sec-night;
+            border-bottom: $border-button-sec-night;
+            color: $color-button-sec-night;
+
+            &:hover {
+                background-color: $background-button-sec-hover-night;
+                border-bottom: $border-button-sec-hover-night;
+                color: $color-button-sec-hover-night;
+            }
+        }
+
+        &.tertiary {
+            background-color: $background-button-ter-night;
+            border-bottom: $border-button-ter-night;
+            color: $color-button-ter-night;
+
+            &:hover {
+                background-color: $background-button-ter-hover-night;
+                border-bottom: $border-button-ter-hover-night;
+                color: $color-button-ter-hover-night;
+            }
+        }
+    }
+}*/

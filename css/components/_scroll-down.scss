@@ -1,21 +1,20 @@
 
 //====================================================================================================
-// DEFAULT BACK-TO-TOP STYLES
+// DEFAULT SCROLL-DOWN STYLES
 //====================================================================================================
 
-.back-to-top {
-	bottom: 0.7rem;
+.scroll-down {
+	bottom: 1rem;
 	display: none;
 	font-size: 0;
 	height: 5rem;
-	position: fixed;
-	right: 0.5rem;
+	position: absolute;
+	left: 1rem;
 	width: 5rem;
-	z-index: $z-index-back-to-top;
 
 	@media (min-width: $breakpoint-md-min) {
-		bottom: 2.5rem;
-		right: 2.5rem;
+		bottom: 3rem;
+		left: 3rem;
 	}
 
 	&::after {
@@ -23,12 +22,15 @@
 	}
 
 	.arrow {
-		animation: bounceUp 1s $transition-function 0.5s infinite alternate;
+		animation: bounceDown 1s $transition-function 0.5s infinite alternate;
+		//transition: all $transition-duration $transition-function;
 	}
 
 	&:hover {
 		.arrow {
 		    animation-play-state: paused;
+		    //fill: $color-link;
+			//stroke: $color-link;
 		}
 	}
 }
@@ -41,10 +43,9 @@
 
 /*.night-mode {
     .back-to-top {
-		.arrow,
-		.line {
+		.arrow {
 			fill: $color-link-night;
 			stroke: $color-link-night;
-    	}
+		}
     }
 }*/

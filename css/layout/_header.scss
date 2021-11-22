@@ -1,19 +1,21 @@
-/*------------------------------------------------------------
-	DEFAULT STYLES
-------------------------------------------------------------*/
+
+//====================================================================================================
+//	HEADER AND LOGO STYLES
+//====================================================================================================
 
 .header {
-	background-color: $background-color-header;
+	background: $background-color-header;
 	box-shadow: none;
+	height: $height-header;
 	left: 0;
 	max-width: 100vw;
-	min-height: 70px;
-  padding: 0;
+	padding: 0;
 	position: fixed;
-  top: 0;
-	// transition: border-color 0.2s;
-	width: 100%;
-  z-index: 98;
+	right: 0;
+	top: 0;
+	transition: top $transition-duration $transition-function;
+	//width: 100%;
+	z-index: $z-index-header;
 
 	&::before,
 	&::after {
@@ -25,85 +27,269 @@
 		clear: both;
 	}
 
-	&:focus-within,
-	&:hover,
-	&.has-focus,
-	&.scrolled {
-		box-shadow: 0 -10px 15px $background-color-footer;
+	&.header--hide {
+		top: calc(-#{$height-header} - 0.5rem);
 	}
 
-	.logo {
-		background: none; // delete when styles.min.css removed
-		height: 46px;
-		left: 15px;
+	&.nav--open {
+		top: 0 !important; // To prevent header scrolling when mobile nav expanded
+	}
+
+	//&:focus-within, // Only required with submenus
+	//&.has-focus,
+	&.header--scrolled {
+		@include box-shadow-btm;
+	}
+
+	&__logo {
+		height: 5rem;
+		left: 0.6rem;
+		line-height: 0.75;
+		padding: 1.1rem 0.3rem 1.1rem 1.4rem;
 		position: absolute;
-		top: 13px;
-		width: 36px;
-	}
+		top: 0.8rem;
+		width: 5rem;
+		z-index: $z-index-logo;
 
-	.logo--small {
-		display: block;
-	}
+		&::after {
+			background: none;
+		}
+	
+		svg {
+			height: 2.8rem;
+			width: 3.3rem;
+		}
 
-	.logo--large {
-		display: none;
+		.logo__dot {
+			transform: translateX(0);
+			transition: transform $transition-duration $transition-function;
+		}
+
+        @media (hover: hover) { // Hover effect on mouse, touchpad and controller devices only
+    		&:hover {
+    			.logo__dot {
+    				transform: translateX(1rem);
+    			}
+    		}
+        }
+	}
+	
+	/*&.header--shrink {
+	    .header__logo {
+    		height: 5rem;
+    		padding: 0.5rem;
+    		width: 5rem;
+
+    		svg {
+    			height: 4rem;
+    			width: 4rem;
+    		}    		
+	    }
+	}*/
+}
+
+body {
+	&.nav--open {
+		overflow-y: hidden; // To prevent header scrolling when mobile nav expanded
 	}
 }
 
-.night-mode {
-	.header {
-		background-color: $background-color-night;
-		
-		&:focus-within,
-		&:hover,
-		&.has-focus,
-		&.scrolled {
-			box-shadow: 0 -10px 15px $background-color-panel;
-		}		
-
-		.logo {
-			path {
-				fill: $white;
-			}
-		}
-	}
-}
-
-
-
-/*------------------------------------------------------------
-	STYLES FOR SPECIFIC SCREEN SIZES
-------------------------------------------------------------*/
-
-// Devices larger than smartphone
-@media (min-width: 600px) and (min-height: 600px) {
-  .header {
-    min-height: 90px;
-
-		.logo {
-			height: 50px;
-			left: 35px;
-			top: 20px;
-			width: 39px;
-		}
-
-		.logo--small {
-			display: none;
-		}
-
-		.logo--large {
-			display: block;
-		}
-	}
-}
-
-// Header box-shadow appears on hover/focus with desktop navigation
-/*@media (min-width: 900px) {
-	.header {
+/* HEADER BOX-SHADOW APPEARS ON HOVER/FOCUS WITH DESKTOP NAVIGATION
+@media (min-width: $breakpoint-nav-desktop) {
+	header {
 		&:focus-within,
 		&:hover,
 		&.has-focus {
-			box-shadow: 0 -10px 15px $background-color-footer;
+			@include box-shadow-btm;
 		}
 	}
 }*/
+
+
+
+//====================================================================================================
+//	HEADER NAVIGATION
+//====================================================================================================
+
+.nav {
+	background-color: $background-color-header;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 1.5rem;
+	transition: max-height calc(#{$transition-duration} * 2) $transition-function;
+	width: 100%;
+
+	@media (min-width: $breakpoint-nav-desktop) {
+		overflow: visible;
+	}
+
+	&.nav--open {
+		@media (max-width: $breakpoint-nav-mobile) {
+			height: 100vh;
+			max-height: 100vh;
+			overflow: hidden;
+		}
+	}
+
+	&__list {
+		display: block;
+		font-size: 0; // To avoid rogue white space between nav items
+		height: 100vh;
+		list-style-type: none;
+		margin: 0;
+		padding: 18vh 0 0;
+		position: relative;
+
+		@media (min-width: $breakpoint-nav-desktop) {
+			float: right;
+			height: auto;
+			margin: 1rem 4.1rem 0 0;
+			padding: 0;
+		}
+	}
+
+	&__item {
+		height: 18vh;
+		text-align: center;
+
+		@media (min-width: $breakpoint-nav-desktop) {
+			display: inline-block;
+			height: auto;
+			margin: 0 1rem;
+			position: relative;
+			white-space: nowrap;
+		}
+
+		&.active {
+			nav__link {
+				color: $color-nav-link-active !important;
+	
+				&::after {
+					background: $color-nav-link-active !important;
+				}
+			}
+		}
+	}
+
+	&__link {
+		color: $color-nav-link;
+		font-family: $font-family-heading;
+		font-size: $font-size-nav-link-lg;
+		font-weight: $font-weight-heading;
+		padding: 1.1rem 0.9rem;
+		text-decoration: none;
+		transition: color $transition-duration $transition-function;
+
+		@media (min-width: $breakpoint-nav-desktop) {
+			font-size: $font-size-nav-link-sm;
+			font-weight: $regular;
+		}
+
+		&::after {
+			background: $color-nav-link;
+		}
+	}
+
+	&__toggle {
+		cursor: pointer;
+		display: block;
+		height: 5rem;
+		padding: 1.7rem 1.5rem; // Top+bottom padding plus >div height should = .nav__toggle height
+		position: absolute;
+		right: 0.5rem;
+		top: 0.8rem;
+		width: 5rem;
+		z-index: $z-index-nav-toggle;
+	
+		@media (min-width: $breakpoint-nav-desktop) {
+			display: none;
+		}
+	
+		> div {
+			display: inline-block;
+			height: 1.6rem;
+			position: relative;
+			transition: all $transition-duration $transition-function;
+			width: 2rem;
+		
+			// DEFAULT SPANS - ALWAYS REQUIRED
+			@include nav-toggle-default;
+
+			// UNCOMMENT SELECTED NAV TOGGLE OVERRIDES - ALL OTHER STYLES USE DEFAULT SPANS ONLY
+			//@include nav-toggle-squeeze;
+			//@include nav-toggle-blink;
+			//@include nav-toggle-halo;
+			//@include nav-toggle-ring;
+		}
+	
+		&.nav--open {
+			> div {
+				// UNCOMMENT SELECTED NAV TOGGLE 'NAV OPEN' STYLE
+				//@include nav-toggle-fade-open;
+				//@include nav-toggle-swipe-open;
+				//@include nav-toggle-comet-open;
+				//@include nav-toggle-squeeze-open;
+				@include nav-toggle-spin-open;
+				//@include nav-toggle-twirl-open;
+				//@include nav-toggle-blink-open;
+				//@include nav-toggle-arrow-left-open;
+				//@include nav-toggle-arrow-right-open;
+				//@include nav-toggle-arrow-up-open;
+				//@include nav-toggle-arrow-down-open;
+				//@include nav-toggle-arrow-spin-open;
+				//@include nav-toggle-turn-open;
+				//@include nav-toggle-halo-open;
+				//@include nav-toggle-ring-open;
+			}
+		}
+  }
+}
+
+
+
+//====================================================================================================
+//	NIGHT MODE OVERRIDES
+//====================================================================================================
+
+.night-mode {
+	.header {
+		background: $background-color-header-night;
+		
+		&__logo {
+			path {
+				fill: $color-body-night;
+			}
+		}
+	}
+
+    .nav {
+		background-color: $background-color-header-night;
+
+		&__link {
+			color: $color-nav-link-night;
+		}
+
+		&.active {
+			&__link {
+				color: $color-nav-link-active-night;
+
+				&::after {
+					background: $color-nav-link-active-night;
+				}
+			}
+		}
+        
+		&__toggle {
+			> div {
+				@include nav-toggle-default-night
+			}
+        	
+			/* ONLY REQUIRED WITH RING NAV TOGGLE STYLE
+			&.nav--open {
+    			> div {
+	    			@include nav-toggle-ring-open-night;
+				}
+			}*/
+		}
+	}
+}

@@ -1,127 +1,202 @@
-/*------------------------------------------------------------
-	KEYFRAME ANIMATIONS
-------------------------------------------------------------*/
 
-// Fade in hero banner contents
-@-webkit-keyframes fadeIn {
-	from { -webkit-opacity: 0; opacity: 0; }
-	to { -webkit-opacity: 1; opacity: 1; }
-}
+//====================================================================================================
+// 'APPEARANCE' ANIMATIONS
+//====================================================================================================
+
+//--------------------------------------------------
+// FADING IN AND OUT
+//--------------------------------------------------
 
 @keyframes fadeIn {
-	from { -webkit-opacity: 0; opacity: 0; }
-	to { -webkit-opacity: 1; opacity: 1; }
+	from { opacity: 0; }
+	to   { opacity: 1; }
 }
 
-// Move hero header contents to the left
-@-webkit-keyframes moveHeroHeader {
-	from { -webkit-transform: translate(30px,-50%); transform: translate(30px,-50%); }
-	to { -webkit-transform: translate(0,-50%); transform: translate(0,-50%); }
+@keyframes fadeOut {
+	from { opacity: 1; }
+	to   { opacity: 0; }
 }
 
-@keyframes moveHeroHeader {
-	from { -webkit-transform: translate(30px,-50%); transform: translate(30px,-50%); }
-	to { -webkit-transform: translate(0,-50%); transform: translate(0,-50%); }
+//--------------------------------------------------
+// MOVING LEFT AND RIGHT, UP AND DOWN
+//--------------------------------------------------
+
+@keyframes moveLeft {
+	from { transform: translateX(-2rem); }
+	to   { transform: translateX(0); }
 }
 
-// Move article header to the left
-@-webkit-keyframes moveArticleHeader {
-	from { -webkit-transform: translateX(30px); transform: translateX(30px); }
-	to { -webkit-transform: translateX(0); transform: translateX(0); }
+@keyframes moveRight {
+	from { transform: translateX(2rem); }
+	to   { transform: translateX(0); }
 }
 
-@keyframes moveArticleHeader {
-	from { -webkit-transform: translateX(30px); transform: translateX(30px); }
-	to { -webkit-transform: translateX(0); transform: translateX(0); }
+@keyframes moveUp {
+	from { transform: translateY(2rem); }
+	to   { transform: translateY(0); }
 }
 
-// Move scroll down link to the left
-@-webkit-keyframes moveScrollDown {
-	from { -webkit-transform: translateX(30px); transform: translateX(30px); }
-	to { -webkit-transform: translateX(0); transform: translateX(0); }
+@keyframes moveDown {
+	from { transform: translateY(-2rem); }
+	to   { transform: translateY(0); }
 }
 
-@keyframes moveScrollDown {
-	from { -webkit-transform: translateX(30px); transform: translateX(30px); }
-	to { -webkit-transform: translateX(0); transform: translateX(0); }
-}
+//--------------------------------------------------
+// BOUNCING UP AND DOWN
+//--------------------------------------------------
 
-// Bounce effect for scroll down link
-@-webkit-keyframes bounceDown {
-	from { -webkit-transform: translateY(0); transform: translateY(0); }
-	to { -webkit-transform: translateY(10px); transform: translateY(10px); }
+@keyframes bounceUp {
+    from { transform: translateY(0px); }
+    to   { transform: translateY(-1rem); }
 }
 
 @keyframes bounceDown {
-	from { -webkit-transform: translateY(0); transform: translateY(0); }
-	to { -webkit-transform: translateY(10px); transform: translateY(10px); }
+	from { transform: translateY(0); }
+	to   { transform: translateY(1rem); }
 }
 
-// Bounce effect for back-to-top link
-@-webkit-keyframes bounceUp {
-  from { -webkit-transform: translateY(0px); transform: translateY(0px); }
-  to { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+//--------------------------------------------------
+// TEXT CROSS-FADE
+//--------------------------------------------------
+
+/*@keyframes fadeTextOne { // First portion of 'rotating' text
+	0%   { opacity: 1; }
+	10%  { opacity: 1; }
+	20%  { opacity: 1; }
+	30%  { opacity: 1; }
+	40%  { opacity: 0.66; }
+	50%  { opacity: 0; }
+	60%  { opacity: 0; }
+	70%  { opacity: 0; }
+	80%  { opacity: 0; }
+	90%  { opacity: 0.66; }
+	100% { opacity: 1; }
 }
 
-@keyframes bounceUp {
-  from { -webkit-transform: translateY(0px); transform: translateY(0px); }
-  to { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
-}
-
-// First portion of 'rotating' homepage headline text
-/*@-webkit-keyframes fadeTextOne {
-	0% { -webkit-opacity: 1; opacity: 1; }
-	10% { -webkit-opacity: 1; opacity: 1; }
-	20% { -webkit-opacity: 1; opacity: 1; }
-	30% { -webkit-opacity: 1; opacity: 1; }
-	40% { -webkit-opacity: 0.66; opacity: 0.66; }
-	50% { -webkit-opacity: 0; opacity: 0; }
-	60% { -webkit-opacity: 0; opacity: 0; }
-	70% { -webkit-opacity: 0; opacity: 0; }
-	80% { -webkit-opacity: 0; opacity: 0; }
-	90% { -webkit-opacity: 0.66; opacity: 0.66; }
-	100% { -webkit-opacity: 1; opacity: 1; }
-}
-
-@keyframes fadeTextOne {
-	0% { -webkit-opacity: 1; opacity: 1; }
-	10% { -webkit-opacity: 1; opacity: 1; }
-	20% { -webkit-opacity: 1; opacity: 1; }
-	30% { -webkit-opacity: 1; opacity: 1; }
-	40% { -webkit-opacity: 0.66; opacity: 0.66; }
-	50% { -webkit-opacity: 0; opacity: 0; }
-	60% { -webkit-opacity: 0; opacity: 0; }
-	70% { -webkit-opacity: 0; opacity: 0; }
-	80% { -webkit-opacity: 0; opacity: 0; }
-	90% { -webkit-opacity: 0.66; opacity: 0.66; }
-	100% { -webkit-opacity: 1; opacity: 1; }
+@keyframes fadeTextTwo { // Second portion of 'rotating' text
+	0%   { opacity: 0; }
+	10%  { opacity: 0; }
+	20%  { opacity: 0; }
+	30%  { opacity: 0; }
+	40%  { opacity: 0.66; }
+	50%  { opacity: 1; }
+	60%  { opacity: 1; }
+	70%  { opacity: 1; }
+	80%  { opacity: 1; }
+	90%  { opacity: 0.66; }
+	100% { opacity: 0; }
 }*/
 
-// Second portion of 'rotating' homepage headline text
-/*@-webkit-keyframes fadeTextTwo {
-	0% { -webkit-opacity: 0; opacity: 0; }
-	10% { -webkit-opacity: 0; opacity: 0; }
-	20% { -webkit-opacity: 0; opacity: 0; }
-	30% { -webkit-opacity: 0; opacity: 0; }
-	40% { -webkit-opacity: 0.66; opacity: 0.66; }
-	50% { -webkit-opacity: 1; opacity: 1; }
-	60% { -webkit-opacity: 1; opacity: 1; }
-	70% { -webkit-opacity: 1; opacity: 1; }
-	80% { -webkit-opacity: 1; opacity: 1; }
-	90% { -webkit-opacity: 0.66; opacity: 0.66; }
-	100% { -webkit-opacity: 0; opacity: 0; }
+
+
+//====================================================================================================
+// NAV TOGGLE ANIMATIONS
+//====================================================================================================
+
+/*--------------------------------------------------
+// 2. SWIPE
+//--------------------------------------------------
+
+@keyframes swipe-open-span2 {
+    100% { height: 0; }
 }
 
-@keyframes fadeTextTwo {
-	0% { -webkit-opacity: 0; opacity: 0; }
-	10% { -webkit-opacity: 0; opacity: 0; }
-	20% { -webkit-opacity: 0; opacity: 0; }
-	30% { -webkit-opacity: 0; opacity: 0; }
-	40% { -webkit-opacity: 0.66; opacity: 0.66; }
-	50% { -webkit-opacity: 1; opacity: 1; }
-	60% { -webkit-opacity: 1; opacity: 1; }
-	70% { -webkit-opacity: 1; opacity: 1; }
-	80% { -webkit-opacity: 1; opacity: 1; }
-	90% { -webkit-opacity: 0.66; opacity: 0.66; }
-	100% { -webkit-opacity: 0; opacity: 0; }
+//--------------------------------------------------
+// 3. COMET
+//--------------------------------------------------
+
+@keyframes comet-open-span2 {
+    100% { height: 0; }
+}
+
+//--------------------------------------------------
+// 4. SQUEEZE
+//--------------------------------------------------
+
+@keyframes squeeze-span1 {
+    0%   { transform: translateY(0.9rem) rotate(45deg); }
+    50%  { transform: translateY(0.9rem) rotate(0); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes squeeze-span3 {
+    0%   { transform: translateY(-0.9rem) rotate(-45deg); }
+    50%  { transform: translateY(-0.9rem) rotate(0); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes squeeze-open-span1 {
+    0%   { transform: translateY(0) rotate(0); }
+    50%  { transform: translateY(0.9rem) rotate(0); }
+    100% { transform: translateY(0.9rem) rotate(45deg); }
+}
+
+@keyframes squeeze-open-span3 {
+    0%   { transform: translateY(0) rotate(0); }
+    50%  { transform: translateY(-0.9rem) rotate(0); }
+    100% { transform: translateY(-0.9rem) rotate(-45deg); }
+}
+
+//--------------------------------------------------
+// 14. HALO
+//--------------------------------------------------
+
+@keyframes halo-span1 {
+    0%   { transform: translateY(10px) rotate(-45deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes halo-span2 {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes halo-span3 {
+    0%   { transform: translateY(-10px) rotate(45deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes halo-open-circle {
+    0%   { transform: scale(0.1); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes halo-open-span1 {
+    0%   { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(10px) rotate(-45deg); }
+}
+
+@keyframes halo-open-span2 {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes halo-open-span3 {
+    0%   { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(-10px) rotate(45deg); }
+}
+
+//--------------------------------------------------
+// 15. RING
+//--------------------------------------------------
+
+@keyframes ring-open-span2 {
+    100% { height: 0; }
+}
+
+@keyframes ring-open {
+    0%   { border-color: transparent; transform: rotate(0); }
+    25%  { border-color: transparent $color-nav-toggle-span transparent transparent; }
+    50%  { border-color: transparent $color-nav-toggle-span $color-nav-toggle-span transparent; }
+    75%  { border-color: transparent $color-nav-toggle-span $color-nav-toggle-span $color-nav-toggle-span; }
+    100% { border-color: $color-nav-toggle-span; transform: rotate(-680deg); }
+}
+
+@keyframes ring-open-night {
+    0%   { border-color: transparent; transform: rotate(0); }
+    25%  { border-color: transparent $color-nav-toggle-span-night transparent transparent; }
+    50%  { border-color: transparent $color-nav-toggle-span-night $color-nav-toggle-span-night transparent; }
+    75%  { border-color: transparent $color-nav-toggle-span-night $color-nav-toggle-span-night $color-nav-toggle-span-night; }
+    100% { border-color: $color-nav-toggle-span-night; transform: rotate(-680deg); }
 }*/

@@ -1,6 +1,7 @@
-/*------------------------------------------------------------
-	DEFAULT STYLES
-------------------------------------------------------------*/
+
+//====================================================================================================
+// DEFAULT TOOLTIP STYLES
+//====================================================================================================
 
 .tooltip {
 	background-color: $background-color-panel;
@@ -9,16 +10,16 @@
 	bottom: calc(100% + 42px);
 	color: $color-body;
 	cursor: default;
-	font-size: $font-size-small;
-	font-weight: $font-weight-small;
+	font-size: $font-size-xs;
+	font-weight: $font-weight-body;
 	left: 50%;
 	line-height: 1.5;
 	opacity: 0;
-	padding: 9px 12px;
+	padding: 8px 12px 9px;
 	position: absolute;
 	text-shadow: none;
 	transform: translateX(-50%);
-	transition: 0.1s;
+	transition: all $transition-duration $transition-function;
 	visibility: hidden;
 	width: 100%;
 	z-index: 90;
@@ -72,23 +73,21 @@ form .mc-tooltip-group {
 
 form .mc-tooltip-group .tooltip {
   bottom: 67px;
-  max-width: 427px;
+  max-width: 31rem;
 }
 
 
-
-
-form.jotform-form {
+form.form {
 	.tooltip {
 		background-color: $background-color-footer;
 		border: 1px solid $background-color-footer;
-		border-bottom-color: $border-color-footer;
+		border-bottom-color: $border-color;
 		bottom: 87px;
 		color: $white;
-		max-width: 401px;
+		max-width: 24.2rem;
 
 		&::before {
-			border-top-color: $border-color-footer;
+			border-top-color: $border-color;
 		}
 
 		&::after {
@@ -101,15 +100,16 @@ form.jotform-form {
 	}
 }
 
-*:not(.on-focus):hover>.tooltip,.on-focus input:focus+.tooltip {
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  visibility: visible;
+.content a.info:hover .tooltip,
+input:focus  + .tooltip {
+	opacity: 1;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+	visibility: visible;
 }
 
 .night-mode {
-	form.jotform-form {
+	form.form {
 		.tooltip {
 			background-color: $background-color-panel;
 			border: 1px solid $background-color-panel;

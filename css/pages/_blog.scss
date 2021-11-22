@@ -315,7 +315,7 @@ progress::-moz-progress-bar {
 				padding: 10px 8px;
 
 				&:hover {
-					color: $color-facebook !important;
+					color: $white !important;
 				}
 			}
 
@@ -323,13 +323,13 @@ progress::-moz-progress-bar {
 				margin-right: 3px;
 
 				&:hover {
-					color: $color-twitter !important;
+					color: $white !important;
 				}
 			}
 
 			&.linkedin {
 				&:hover {
-					color: $color-linkedin !important;
+					color: $white !important;
 				}
 			}
 

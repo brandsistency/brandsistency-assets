@@ -1,39 +1,90 @@
-/*------------------------------------------------------------
-	DEFAULT STYLES
-------------------------------------------------------------*/
+
+//====================================================================================================
+// DEFAULT BANNER STYLES
+//====================================================================================================
 
 .banner {
-	padding-top: 70px;
 	width: 100%;
+	
+	//&__header {
+	    
+	//}
 }
 
-.banner__header {
-	margin: 65px 0 5px;
+.home {
+	.banner {
+		flex: 1 0 auto; // Stretches homepage banner to fill height of <main>
+	}
 }
 
-.header__bar {
-	border-top: 3px solid $orange;
-	margin: 2.5rem 0 3.2rem;
-	margin: calc(#{$font-size-body-small} * 1.5) 0;
-	width: 12rem;
-}
+
+//====================================================================================================
+// HOMEPAGE HERO WITH IMAGE CAROUSEL
+//====================================================================================================
 
 .hero {
-	background-color: $background-color-panel;
-	height: calc(100vh - 70px);
-	min-height: 300px;
+	//min-height: calc(100vh - 23rem);
+	padding-left: 0;
+	padding-right: 0;
 	position: relative;
-	width: 100%;
+
+	&__header {
+		animation: fadeIn 2s ease-in $transition-delay 1 normal forwards, moveDown 2s $transition-function $transition-delay 1 normal forwards;
+		opacity: 0;
+		padding: 0 2rem 2rem;
+		text-align: center;
+		
+		@media (min-width: $breakpoint-md-min) {
+			padding: 0 4rem 2rem;
+		}
+		
+		.button {
+		    left: -0.7rem; // Move button left a little to account for chevron
+		}
+	}
 }
 
-.hero__image {
+#hero {
+	&__container {
+		animation: fadeIn 2s ease-in $transition-delay 1 normal forwards, moveUp 2s $transition-function $transition-delay 1 normal forwards;
+		margin: 0;
+		opacity: 0;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__carousel {
+		img {
+			max-height: 95vh;
+			min-height: 28rem;
+			object-fit: cover;
+
+			@media (orientation: portrait) {
+				@media (min-width: 350px) { height: calc(100vh - 36rem); }
+				@media (min-width: $breakpoint-md-min) { height: calc(100vh - 42rem); }
+			}
+
+			@media (min-aspect-ratio: 1/1) { // Browser window with an aspect-ratio of 1:1 or landscape
+				object-fit: contain;
+
+				@media (max-width: $breakpoint-sm-max) { height: calc((100vw - 4rem) * 2/3); }
+				@media (min-width: $breakpoint-md-min) { height: calc((100vw - 8rem) * 2/3); }
+			}
+
+			@media (min-width: $breakpoint-lg-min) { height: calc(100vh - 36rem); }
+			@media (min-width: calc(#{$breakpoint-lg-min} * 2)) { height: calc(100vh - 42rem); }
+		}
+	}
+}
+
+/*.hero__image {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
-}
+}*/
 
-#hero__video {
+/*#hero__video {
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: none;
@@ -43,7 +94,7 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-}
+}*/
 
 // Hero background-position (tied to Fred element options)
 .hero--left-top { background-position: left top; }
@@ -56,47 +107,29 @@
 .hero--center-center { background-position: center center; }
 .hero--center-bottom { background-position: center bottom; }
 
-.hero__header {
-	animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
-						 moveHeroHeader 1.5s ease-in-out 0.25s normal forwards;
-	opacity: 0;
-	position: relative;
-	top: 46%;
 
-	h1,
-	p {
-		color: $white;
-		text-shadow: 0 0 7px $color-body;
-	}
-}
 
-.hero__overlay {
+/*.hero__overlay {
 	height: 100%;
 	position: absolute;
 	top: 0;
 	width: 100%;
-}
+}*/
 
 .hero__scroll {
-	animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
-						 moveScrollDown 1.5s ease-in-out 0.25s normal forwards,
-						 bounceDown 1s ease-in-out 2.5s infinite alternate;
-	bottom: 80px;
-	margin-left: auto;
-  margin-right: auto;
-  max-width: 1220px;
+	animation: fadeIn 1.5s ease-in 1s 1 normal forwards, bounceDown 1s ease-in-out 3s infinite alternate;
+	bottom: 4rem;
+	height: 5rem;
+	left: 3rem;
 	opacity: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-	position: relative;
-	width: 100%;
+	position: absolute;
+	width: 5rem;
 
 	a {
 		color: $white;
 		margin-left: -5px;
 		padding: 25px 8px 6px;
 		text-decoration: none;
-		text-shadow: 0 0 7px $color-head;
 		transition: 0.2s;
 
 		[class^="icon-"] {
@@ -104,12 +137,12 @@
 		}
 
 		&:hover {
-			color: $orange;
+			color: $color-highlight;
 		}
 	}
 }
 
-// Small artlcie header on blog posts
+// Small article header on blog posts
 .article__header {
 	left: 50%;
 	margin-left: auto;
@@ -123,10 +156,9 @@
 	width: 100%;
 
 	p {
-		animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards,
-							 moveArticleHeader 1.5s ease-in-out 0.25s normal forwards;
+		animation: fadeIn 1.5s ease-in 0.25s 1 normal forwards;
 		color: $white;
-		font: $font-weight-button $font-size-small $font-family-serif;
+		font: $font-weight-button $font-size-sm $font-family-heading;
 		opacity: 0;
 		text-shadow: 0 0 7px $color-body;
 		text-transform: uppercase;
@@ -148,21 +180,9 @@
 
 // Desktop and tablet styles
 @media (min-width: 600px) and (min-height: 600px) {
-	.banner {
-		padding-top: 90px;
-	}
-
-	.banner__header {
-		margin: 100px 0 10px;
-	}
-	 
-	.header__bar {
-		margin: calc(#{$font-size-body-large} * 1.5) 0;
-	}
-	
-	.hero {
-		height: calc(100vh - 90px);
-	}
+	//.hero {
+		//height: calc(100vh - 90px);
+	//}
 
 	#hero__video {
 		display: block;

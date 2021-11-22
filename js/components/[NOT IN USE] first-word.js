@@ -1,4 +1,4 @@
-jQuery('.text').each(function() {
+$('.text').each(function() {
   var word = $(this).html();
   var index = word.indexOf(' ');
   if(index == -1) {

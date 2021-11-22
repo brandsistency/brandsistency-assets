@@ -1,82 +1,466 @@
-/*!-----------------------------------------------------------
-	BRANDSISTENCY.COM STYLESHEET
---------------------------------------------------------------
-	styles.css | (c) 2017-2019 Brandsistency | hello@brandsistency.com
-	normalize.css v8.0.1 | MIT License | https://github.com/necolas/normalize.css
-	Bootstrap 3 Grid | (c) 2011-2016 Twitter, Inc. | MIT Licence | https://getbootstrap.com/docs/3.3
-	Cookie Consent v3.0.3 | (c) 2015 Silktide Ltd | MIT Licence | https://cookieconsent.insites.com
-	Responsive navigation based on a blog post by Tania Rascia | https://www.taniarascia.com/responsive-dropdown-navigation-bar
---------------------------------------------------------------
+
+/*!===================================================================================================
+// BRANDSISTENCY.COM STYLESHEET
+//====================================================================================================
+// styles.css            | (c) Brandsistency                | hello@brandsistency.com
+// normalize.css v8.0.1  | (c) Gallagher/Neal | MIT License | https://github.com/necolas/normalize.css
+// Bootstrap 3 Grid      | (c) Twitter, Inc.  | MIT Licence | https://getbootstrap.com/docs/3.3
+// Cookie Consent v3.0.3 | (c) Silktide Ltd   | MIT Licence | https://cookieconsent.insites.com
+//====================================================================================================
+//
 */
 
+//====================================================================================================
+// COLOUR PALETTE
+//====================================================================================================
 
+// PRIMARY COLOURS
+$gunmetal:      #293241; // Body text, footer background
+$bdazzled-blue: #3d5a80; // 
+$pale-cerulean: #98c1d9; // 
+$alice-blue:    #e0ecf4; // 
+$burnt-sienna:  #ee6c4d; // Links, buttons and highlights
 
-/*------------------------------------------------------------
-	PRIMARY PALETTE
-------------------------------------------------------------*/
-
-$orange: #ff6200; // Primary colour
-$blue: #009dff;   // Secondary colour
-$red: #ff001e;    // Failure colour
-$green: #00ac00;  // Success colour
-$white: #fff;
-$silver: #c0c0c0; // Named colour 'Silver'
+// SECONDARY COLOURS
+$amber: #fa0; // Chrome Yellow - warning messages
 $black: #000;
+$green: #3a3; // Green Pantone - success messages
+$red:   #f03; // Imperial Red - error messages
+$white: #fff;
+
+// TINTS AND SHADES
+@function tint($color, $percentage)  { @return mix(white, $color, $percentage); }
+@function shade($color, $percentage) { @return mix(black, $color, $percentage); }
 
 
 
-/*------------------------------------------------------------
-	TYPOGRAPHY
-------------------------------------------------------------*/
+//====================================================================================================
+// GRID AND BREAKPOINTS
+//====================================================================================================
 
-$color-body: #111;
-$color-head: #222;
-$color-small: #808080; // Named colour 'Grey'
-$color-footer: #aaa;
-$color-strong: #222;
+$max-container-width: 1360px;
+$grid-columns:        12;
+$grid-gutter-width:	  40px;
 
-$font-family-sans: 'Roboto', Arial, Helvetica, sans-serif;
-$font-family-serif: 'Roboto Slab', Tahoma, Geneva, sans-serif;
-$font-family-script: 'Cedarville Cursive', 'Bradley Hand', 'Apple Chancery', cursive;
+// ALL DIVISIBLE BY 12
+$breakpoint-sm-min:  576px;
+$breakpoint-md-min:  768px;
+$breakpoint-lg-min:  996px;
+$breakpoint-xl-min:  1200px;
+$breakpoint-xxl-min: 1440px;
 
-$font-size-body-small: 1.6rem;
-$font-size-body-large: 1.7rem;
-$font-size-small: 1.4rem;
+$breakpoint-xs-max: calc(#{$breakpoint-sm-min - 1px});
+$breakpoint-sm-max: calc(#{$breakpoint-md-min - 1px});
+$breakpoint-md-max: calc(#{$breakpoint-lg-min - 1px});
+$breakpoint-lg-max: calc(#{$breakpoint-xl-min - 1px});
+$breakpoint-xl-max: calc(#{$breakpoint-xxl-min - 1px});
 
-$font-weight-body: 300;
-$font-weight-small: 300;
-$font-weight-head: 400;
-$font-weight-strong: 500;
-$font-weight-bold: 700;
-$font-weight-button: 700;
-
-
-
-/*------------------------------------------------------------
-	BACKGROUNDS AND BORDERS
-------------------------------------------------------------*/
-
-$background-color-header: #fff;
-$background-color-panel: #f3f3f3;
-$background-color-input: #f3f3f3;
-$background-color-hero: #444;
-$background-color-footer: #222;
-$background-color-night: #161616;
-$background-color-cookies: #ffe0cc; // 20% tint of $orange (#ff6200)
-
-$border-color: #d3d3d3;
-$border-color-panel: #f3f3f3;
-$border-color-footer: #444;
-$border-style: solid;
-$border-width: 1px;
+$breakpoint-nav-desktop: 768px;
+$breakpoint-nav-mobile: calc(#{$breakpoint-nav-desktop - 1px});
 
 
 
-/*------------------------------------------------------------
-	SOCIAL NETWORK COLOURS
-------------------------------------------------------------*/
+//====================================================================================================
+// TYPOGRAPHY
+//====================================================================================================
 
-$color-facebook: #6d84b4;
-$color-twitter: #55acee;
-$color-instagram: #e1306c;
-$color-linkedin: #00a0dc;
+//--------------------------------------------------
+// COLOURS
+//--------------------------------------------------
+
+$color-body:        $gunmetal;
+$color-body-alt:    tint($gunmetal, 50%);
+$color-error:       $red;
+$color-highlight:   $burnt-sienna;
+$color-success:     $green;
+$color-warning:     $amber;
+
+$color-heading:     $color-body;
+$color-heading-alt: $color-body-alt;
+$color-blockquote:  $color-highlight;
+
+// NIGHT MODE OVERRIDES
+$color-body-night:        $white;
+$color-body-alt-night:    $color-body-alt;
+$color-error-night:       $color-error;
+$color-highlight-night:   $color-highlight;
+$color-success-night:     $color-success;
+$color-warning-night:     $color-warning;
+
+$color-heading-night:     $color-body-night;
+$color-heading-alt-night: $color-body-alt-night;
+$color-blockquote-night:  $color-highlight-night;
+
+//--------------------------------------------------
+// FONT FAMILIES
+//--------------------------------------------------
+
+$sans-serif: 'Roboto', Arial, Helvetica, sans-serif;
+$serif:      'Roboto Slab', Arial, Helvetica, sans-serif;
+$cursive:    'Over the Rainbow', 'Bradley Hand', 'Apple Chancery', cursive;
+$mono:       'Roboto Mono', 'Courier New', monospace;
+
+$font-family-body:       $sans-serif;
+$font-family-heading:    $serif;
+$font-family-blockquote: $cursive;
+$font-family-code:       $mono;
+
+//--------------------------------------------------
+// FONT SIZES
+//--------------------------------------------------
+
+// BASE SIZES
+$font-size-html: 62.5% !important; // 1rem = 10px 
+$font-size-xs:   1.4rem;
+$font-size-sm:   1.6rem;
+$font-size-lg:   1.8rem;
+
+$font-size-error: $font-size-xs;
+$font-size-success: $font-size-xs;
+$font-size-warning: $font-size-xs;
+
+/* 'MINOR THIRD' TYPOGRAPHIC SCALE
+$h1-scale: 2.074;
+$h2-scale: 1.44;
+$h3-scale: 1.2;
+$h4-scale: 1;
+$h5-scale: 0.833;
+$h6-scale: 0.694;
+$bq-scale: $h3-scale;*/
+
+/* 'MAJOR THIRD' TYPOGRAPHIC SCALE
+$h1-scale: 2.441;
+$h2-scale: 1.563;
+$h3-scale: 1.25;
+$h4-scale: 1;
+$h5-scale: 0.8;
+$h6-scale: 0.64;
+$bq-scale: $h3-scale;*/
+
+// 'PERFECT FOURTH' TYPOGRAPHIC SCALE [SELECTED]
+$h1-scale: 3.157;
+$h2-scale: 1.777;
+$h3-scale: 1.333;
+$h4-scale: 1;
+$h5-scale: 0.75;
+$h6-scale: 0.563;
+$bq-scale: $h3-scale;
+
+/* 'AUGMENTED FOURTH' TYPOGRAPHIC SCALE
+$h1-scale: 3.988;
+$h2-scale: 1.999;
+$h3-scale: 1.414;
+$h4-scale: 1;
+$h5-scale: 0.707;
+$h6-scale: 0.5;
+$bq-scale: $h3-scale;*/
+
+/* 'PERFECT FIFTH' TYPOGRAPHIC SCALE
+$h1-scale: 5.063;
+$h2-scale: 2.25;
+$h3-scale: 1.5;
+$h4-scale: 1;
+$h5-scale: 0.667;
+$h6-scale: 0.444;
+$bq-scale: $h3-scale;*/
+
+//--------------------------------------------------
+// FONT WEIGHTS
+//--------------------------------------------------
+
+$lightest:    100;
+$extra-light: 200;
+$light:       300;
+$normal:      400;
+$regular:     400;
+$medium:      500;
+$semi-bold:   600;
+$bold:        700;
+$extra-bold:  800;
+$boldest:     900;
+
+$font-weight-body:       $light;
+$font-weight-strong:     $medium;
+$font-weight-heading:    $light;
+$font-weight-h1:         $extra-light;
+$font-weight-h2:         $light;
+$font-weight-h3:         $light;
+$font-weight-h4:         $medium;
+$font-weight-h5:         $regular;
+$font-weight-h6:         $regular;
+$font-weight-blockquote: $regular;
+
+//--------------------------------------------------
+// LINE HEIGHTS
+//--------------------------------------------------
+
+$line-height-body:       1.6;
+$line-height-heading:    1.3;
+$line-height-h1:         1.25;
+$line-height-h2:         $line-height-heading;
+$line-height-h3:         $line-height-heading;
+$line-height-h4:         $line-height-body;
+$line-height-h5:         $line-height-body;
+$line-height-h6:         $line-height-body;
+$line-height-blockquote: 1.4;
+$line-height-code:       $line-height-body;
+
+
+
+//====================================================================================================
+// BACKGROUNDS AND BORDERS
+//====================================================================================================
+
+$background-color-body:  $white;
+$background-color-panel: tint($gunmetal, 95%);
+$border-color:           tint($gunmetal, 70%);
+$border-style:           solid;
+$border-width:           1px;
+
+// NIGHT MODE OVERRIDES
+$background-color-body-night:  $gunmetal;
+$background-color-panel-night: tint($gunmetal, 5%);
+$border-color-night:           tint($gunmetal, 40%);
+
+
+
+//====================================================================================================
+// LINKS
+//====================================================================================================
+
+$color-link:         $color-highlight;
+$font-family-link:   $font-family-body;
+$font-size-link-sm:  $font-size-sm;
+$font-size-link-lg:  $font-size-lg;
+$font-weight-link:   $medium;
+$height-border-link: 0.2rem;
+
+// NIGHT MODE OVERRIDES
+$color-link-night:   $color-highlight-night;
+
+
+
+//====================================================================================================
+// BUTTONS
+//====================================================================================================
+
+//----------------------------------------------------------------------------------------------------
+// DEFAULT (PRIMARY) BUTTON
+//----------------------------------------------------------------------------------------------------
+
+$background-button:       transparent;
+$background-button-hover: transparent;
+$border-button:           none;
+$border-button-hover:     none;
+$border-radius-button:    0;
+$color-button:            $color-highlight;
+$color-button-hover:      $color-highlight;
+$font-family-button:      $font-family-body;
+$font-size-button-sm:     $font-size-sm;
+$font-size-button-lg:     $font-size-lg;
+$font-weight-button:      $medium;
+$height-button:           auto;
+$line-height-button:      inherit;
+$margin-button:           0 -0.3rem $font-size-sm;
+$padding-button:          0 0.3rem;
+$text-transform-button:   none;
+$width-button:            auto;
+
+// NIGHT MODE OVERRIDES
+$background-button-night:       transparent;
+$background-button-hover-night: transparent;
+$border-button-night:           none;
+$border-button-hover-night:     none;
+$color-button-night:            $color-highlight;
+$color-button-hover-night:      $color-highlight-night;
+
+/*----------------------------------------------------------------------------------------------------
+// SECONDARY BUTTON [NOT USED]
+//----------------------------------------------------------------------------------------------------
+
+$background-button-sec:       $background-button;
+$background-button-sec-hover: $background-button-hover;
+$border-button-sec:           $border-button;
+$border-button-sec-hover:     $border-button-hover;
+$border-radius-button-sec:    $border-radius-button;
+$color-button-sec:            $color-button;
+$color-button-sec-hover:      $color-button-hover;
+$font-family-button-sec:      $font-family-button;
+$font-size-button-sm-sec:     $font-size-button-sm;
+$font-size-button-lg-sec:     $font-size-button-lg;
+$font-weight-button-sec:      $font-weight-button;
+$height-button-sec:           $height-button;
+$line-height-button-sec:      $line-height-button;
+$margin-button-sec:           $margin-button;
+$padding-button-sec:          $padding-button;
+$text-transform-button-sec:   $text-transform-button;
+$width-button-sec:            $width-button;
+
+// NIGHT MODE OVERRIDES
+$background-button-sec-night:       $background-button-night;
+$background-button-sec-hover-night: $background-button-night-hover;
+$border-button-sec-night:           $border-button-night;
+$border-button-sec-hover-night:     $border-button-night-hover;
+$color-button-sec-night:            $color-button-hover;
+$color-button-sec-hover-night:      $color-button-hover-night;*/
+
+/*----------------------------------------------------------------------------------------------------
+// TERTIARY BUTTON [NOT USED]
+//----------------------------------------------------------------------------------------------------
+
+$background-button-ter:       $background-button;
+$background-button-ter-hover: $background-button-hover;
+$border-button-ter:           $border-button;
+$border-button-ter-hover:     $border-button-hover;
+$border-radius-button-ter:    $border-radius-button;
+$color-button-ter:            $color-button;
+$color-button-ter-hover:      $color-button-hover;
+$font-family-button-ter:      $font-family-button;
+$font-size-button-sm-ter:     $font-size-button-sm;
+$font-size-button-lg-ter:     $font-size-button-lg;
+$font-weight-button-ter:      $font-weight-button;
+$height-button-ter:           $height-button;
+$line-height-button-ter:      $line-height-button;
+$margin-button-ter:           $margin-button;
+$padding-button-ter:          $padding-button;
+$text-transform-button-ter:   $text-transform-button;
+$width-button-ter:            $width-button;
+
+// NIGHT MODE OVERRIDES
+$background-button-ter-night:       $background-button-night;
+$background-button-ter-hover-night: $background-button-night-hover;
+$border-button-ter-night:           $border-button-night;
+$border-button-ter-hover-night:     $border-button-night-hover;
+$color-button-ter-night:            $color-button-hover;
+$color-button-ter-hover-night:      $color-button-hover-night;*/
+
+
+
+//====================================================================================================
+// LISTS
+//====================================================================================================
+
+$color-list-bullet: $color-highlight;
+$color-list-number: $color-highlight;
+
+// NIGHT MODE OVERRIDES
+$color-list-bullet-night: $color-highlight-night;
+$color-list-number-night: $color-highlight-night;
+
+
+
+//====================================================================================================
+// FORMS
+//====================================================================================================
+
+$background-color-input:   transparent;
+$border-color-input:       $border-color;
+$border-color-input-focus: $color-highlight;
+$border-radius-input:      0;
+$border-width-input:       0.1rem;
+$color-input:              $color-body;
+$color-label:              $color-body;
+$color-placeholder:        $border-color;
+$font-family-input:        $font-family-heading;
+$font-size-label:          $font-size-xs;
+$font-weight-input:        $font-weight-h1;
+$line-height-input:        $line-height-heading;
+
+// NIGHT MODE OVERRIDES
+$background-color-input-night:   transparent;
+$border-color-input-night:       $border-color-night;
+$border-color-input-focus-night: $color-highlight;
+$color-input-night:              $color-body-night;
+$color-label-night:              $color-body-night;
+$color-placeholder-night:        $border-color-night;
+
+
+
+//====================================================================================================
+// TABLES
+//====================================================================================================
+
+$background-color-th:     transparent;
+$background-color-td:     transparent;
+$background-color-td-alt: transparent;
+$border-width-table:      $border-width;
+
+// NIGHT MODE OVERRIDES
+$background-color-th-night:     transparent;
+$background-color-td-night:     transparent;
+$background-color-td-alt-night: transparent;
+
+
+
+//====================================================================================================
+// TRANSITIONS
+//====================================================================================================
+
+$transition-delay:    0.25s;
+$transition-duration: 0.25s;
+$transition-function: ease-in-out;
+
+
+
+//====================================================================================================
+// Z-INDEX HIERARCHY (TOP TO BOTTOM)
+//====================================================================================================
+
+$z-index-logo:           10;
+$z-index-nav-toggle:     10;
+$z-index-header:         9;
+$z-index-cookie-consent: 9;
+$z-index-browse-happy:   8;
+$z-index-back-to-top:    8;
+
+
+
+//====================================================================================================
+// HEADER AND NAV
+//====================================================================================================
+
+$background-color-header: $white;
+$border-color-header:     transparent;
+$color-nav-link:          $color-body;
+$color-nav-link-hover:    $color-nav-link;
+$color-nav-link-active:   $color-highlight;
+$color-nav-toggle-span:   $color-body;
+$font-family-header:      $font-family-body;
+$font-family-header-link: $font-family-heading;
+$font-size-header:        $font-size-sm;
+$font-size-nav-link-sm:   $font-size-lg; // calc(#{$font-size-lg} * #{$h3-scale});
+$font-size-nav-link-lg:   calc(#{$font-size-lg} * #{$h2-scale});
+$height-nav-toggle-span:  0.2rem;
+$height-header:           6.6rem;
+
+// NIGHT MODE OVERRIDES
+$background-color-header-night: $gunmetal;
+$border-color-header-night:     transparent;
+$color-nav-link-night:          $color-body-night;
+$color-nav-link-hover-night:    $color-nav-link-night;
+$color-nav-link-active-night:   $color-nav-link-active;
+$color-nav-toggle-span-night:   $color-body-night;
+
+
+
+//====================================================================================================
+// FOOTER
+//====================================================================================================
+
+$background-color-footer: $gunmetal;
+$border-color-footer:     transparent;
+$border-width-footer:     0.1rem;
+$color-footer:            tint($gunmetal, 40%);
+$color-footer-link:       $white;
+$font-family-footer:      $font-family-body;
+$font-family-footer-link: $font-family-heading;
+$font-size-footer:        $font-size-xs;
+$font-size-footer-link:   $font-size-lg; // calc(#{$font-size-lg} * #{$h3-scale});
+$font-weight-footer:      $regular;
+$font-weight-footer-link: $regular;
+
+// NIGHT MODE OVERRIDES
+$background-color-footer-night: $background-color-footer;
+$border-color-footer-night:     tint($gunmetal, 10%);
+$color-footer-night:            $color-footer;
+$color-footer-link-night:       $white;
